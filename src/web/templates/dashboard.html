@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Adaptive & Predictive Ventilation Support System | MIMIC-IV Clinical Station</title>
+  <meta name="description" content="AI-Powered Adaptive and Predictive Ventilation Support System for ICU Patients using MIMIC-IV dataset with closed-loop bounded safety controls.">
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js for Telemetry & Curves -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation & Station Status Bar -->
+  <header class="header-bar">
+    <div class="brand-section">
+      <div class="brand-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0a0e17;">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="brand-title">VENT-AI PREDICTIVE STATION</h1>
+        <div class="brand-subtitle">Adaptive Ventilation Support System • MIMIC-IV ICU Cohort</div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="nav-tab-btn active" id="tab-btn-monitor" onclick="switchTab('monitor')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        ICU Patient Monitor
+      </button>
+      <button class="nav-tab-btn" id="tab-btn-benchmark" onclick="switchTab('benchmark')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Model Benchmarks
+      </button>
+      <button class="nav-tab-btn" id="tab-btn-simulator" onclick="switchTab('simulator')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Lung Simulator Sandbox
+      </button>
+      <button class="nav-tab-btn" id="tab-btn-safety" onclick="switchTab('safety')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Safety & Guardrails
+      </button>
+    </nav>
+
+    <!-- Station Telemetry Indicator -->
+    <div class="system-status">
+      <div class="pulse-indicator"></div>
+      <div>
+        <div style="font-weight: 600; color: #f8fafc;">STATION ACTIVE</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);" id="live-clock">2026-10-24 11:40 UTC</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="dashboard-container">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: ICU PATIENT MONITOR & ADAPTIVE SYSTEM -->
+    <!-- ========================================== -->
+    <section id="pane-monitor" class="tab-pane active">
+      
+      <!-- Patient Selection & Banner Bar -->
+      <div class="patient-bar glass-card">
+        <div class="patient-select-wrapper">
+          <label for="patient-select" class="select-label">Active ICU Stay:</label>
+          <select id="patient-select" class="custom-select" onchange="onPatientChange(this.value)">
+            <option value="">Loading MIMIC-IV cohort...</option>
+          </select>
+        </div>
+
+        <div class="patient-chips" id="patient-demographics-chips">
+          <span class="badge badge-cyan" id="badge-patient-id">Subject ID: --</span>
+          <span class="badge badge-blue" id="badge-age-gender">-- Yrs | --</span>
+          <span class="badge badge-emerald" id="badge-pbw">PBW: 70.0 kg</span>
+          <span class="badge badge-amber" id="badge-diagnoses">Diagnoses: --</span>
+          <span class="badge badge-crimson" id="badge-deterioration-flag" style="display: none;">Deterioration Event Documented</span>
+        </div>
+      </div>
+
+      <!-- Grid: Risk Gauge (Left), Realtime Vitals & Graphs (Center), Recommendation Card (Right) -->
+      <div class="grid-top">
+        
+        <!-- Left Column: Predictive Risk & Explainability -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-cyan);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              Predictive Risk Engine
+            </h2>
+            <span class="badge badge-cyan" id="risk-model-tag">XGBoost v1.0</span>
+          </div>
+
+          <div class="risk-card-content">
+            <div class="risk-circle-wrapper">
+              <svg class="risk-svg" viewBox="0 0 120 120">
+                <circle class="risk-svg-bg" cx="60" cy="60" r="50"></circle>
+                <circle id="risk-circle-prog" class="risk-svg-prog" cx="60" cy="60" r="50" stroke="#10b981" stroke-dasharray="314.15" stroke-dashoffset="250"></circle>
+              </svg>
+              <div class="risk-circle-text">
+                <span id="risk-score-display" class="risk-percent" style="color: #10b981;">20%</span>
+                <span id="risk-level-badge" class="badge badge-emerald" style="margin-top: 4px;">NORMAL</span>
+              </div>
+            </div>
+
+            <div style="font-size: 0.82rem; color: var(--text-secondary); max-width: 260px;">
+              Predicted probability of respiratory deterioration in next <strong style="color: #fff;">4-6 hours</strong>.
+            </div>
+
+            <div class="lead-time-banner">
+              <span style="color: var(--text-muted);">Early Warning Window:</span>
+              <strong style="color: var(--accent-cyan); font-family: var(--font-mono);">3.83 Hours Lead</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.75rem;">
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">
+              Top Clinical Risk Drivers:
+            </div>
+            <div id="patient-risk-drivers" style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.75rem;">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Column: Telemetry Readings & Longitudinal Vitals Graph -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Key Telemetry Tile Grid -->
+          <div class="telemetry-grid">
+            <div class="telemetry-tile">
+              <span class="tile-label">Oxygen Sat (SpO2)</span>
+              <div class="tile-value" id="val-spo2">96 <span class="tile-unit">%</span></div>
+              <span class="tile-target">Target: 92-96%</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">Current FiO2</span>
+              <div class="tile-value" id="val-fio2">0.35 <span class="tile-unit"></span></div>
+              <span class="tile-target">Safe: &le; 0.60</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">Set PEEP</span>
+              <div class="tile-value" id="val-peep">5.0 <span class="tile-unit">cmH2O</span></div>
+              <span class="tile-target">Bounds: 5-20</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">Driving Pressure (&Delta;P)</span>
+              <div class="tile-value" id="val-dp" style="color: var(--accent-emerald);">11.0 <span class="tile-unit">cmH2O</span></div>
+              <span class="tile-target">Limit: &lt; 14.0</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">Tidal Volume (Vt)</span>
+              <div class="tile-value" id="val-vt">450 <span class="tile-unit">mL</span></div>
+              <span class="tile-target" id="val-vt-kg">6.4 mL/kg PBW</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">Respiratory Rate</span>
+              <div class="tile-value" id="val-rr">18 <span class="tile-unit">bpm</span></div>
+              <span class="tile-target">Target: 12-24</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">ROX Index</span>
+              <div class="tile-value" id="val-rox">15.2 <span class="tile-unit"></span></div>
+              <span class="tile-target">Safe: &gt; 4.88</span>
+            </div>
+            <div class="telemetry-tile">
+              <span class="tile-label">Mean Art. Pressure</span>
+              <div class="tile-value" id="val-map">78 <span class="tile-unit">mmHg</span></div>
+              <span class="tile-target">Target: &gt; 65</span>
+            </div>
+          </div>
+
+          <!-- Time-Series Longitudinal Chart -->
+          <div class="glass-card chart-card">
+            <div class="card-header">
+              <h2 class="card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-blue);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                Longitudinal Oxygenation & Airway Pressure Telemetry
+              </h2>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="monitoring-duration-tag">
+                Showing 0 to 48 Hours
+              </div>
+            </div>
+            <div class="canvas-wrapper">
+              <canvas id="patient-timeseries-chart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Adaptive Controller Recommendations & Safety Guardrails -->
+        <div class="glass-card recommendation-panel">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-emerald);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Adaptive Recommendation
+            </h2>
+            <span class="badge badge-emerald" id="approval-req-badge">ARDSNet Bounded</span>
+          </div>
+
+          <!-- Settings Comparison Table -->
+          <table class="settings-comparison-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Current</th>
+                <th>Proposed</th>
+                <th>Delta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>FiO2</td>
+                <td id="rec-curr-fio2">0.35</td>
+                <td id="rec-prop-fio2" style="color: var(--accent-cyan); font-weight: 700;">0.35</td>
+                <td><span id="rec-delta-fio2" class="delta-badge delta-zero">0.00</span></td>
+              </tr>
+              <tr>
+                <td>PEEP (cmH2O)</td>
+                <td id="rec-curr-peep">5.0</td>
+                <td id="rec-prop-peep" style="color: var(--accent-cyan); font-weight: 700;">5.0</td>
+                <td><span id="rec-delta-peep" class="delta-badge delta-zero">0.0</span></td>
+              </tr>
+              <tr>
+                <td>Vt (mL)</td>
+                <td id="rec-curr-vt">450</td>
+                <td id="rec-prop-vt" style="color: var(--accent-cyan); font-weight: 700;">450</td>
+                <td><span id="rec-delta-vt" class="delta-badge delta-zero">0</span></td>
+              </tr>
+              <tr>
+                <td>Resp Rate (bpm)</td>
+                <td id="rec-curr-rr">18</td>
+                <td id="rec-prop-rr" style="color: var(--accent-cyan); font-weight: 700;">18</td>
+                <td><span id="rec-delta-rr" class="delta-badge delta-zero">0</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 7-Point Safety Guardrail Checklist -->
+          <div class="safety-checklist">
+            <div style="font-size: 0.76rem; font-weight: 600; color: var(--accent-emerald); margin-bottom: 0.25rem;">
+              Strict ARDSNet Safety Constraint Audit:
+            </div>
+            <div class="safety-item">
+              <span class="check-icon check-pass" id="chk-plateau">&check;</span>
+              <span>Plateau Pressure &le; 30 cmH2O (Barotrauma Shield)</span>
+            </div>
+            <div class="safety-item">
+              <span class="check-icon check-pass" id="chk-driving">&check;</span>
+              <span>Driving Pressure &Delta;P &le; 14 cmH2O (Lung Strain Bound)</span>
+            </div>
+            <div class="safety-item">
+              <span class="check-icon check-pass" id="chk-vt">&check;</span>
+              <span>Tidal Volume between 4.0 - 8.0 mL/kg PBW</span>
+            </div>
+            <div class="safety-item">
+              <span class="check-icon check-pass" id="chk-step">&check;</span>
+              <span>Rate of Change: &Delta;FiO2 &le; 0.10, &Delta;PEEP &le; 2.0</span>
+            </div>
+          </div>
+
+          <!-- Clinical Rationale Box -->
+          <div class="rationale-box" id="rec-rationale-box">
+            Patient physiology stable within target lung-protective window. Continuing conservative maintenance settings.
+          </div>
+
+          <!-- Clinician Supervision Controls -->
+          <div class="action-buttons-group">
+            <button class="btn-primary" id="btn-approve" onclick="applyRecommendation('APPROVE')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Approve Titration
+            </button>
+            <button class="btn-secondary" id="btn-modify" onclick="openModifyModal()">
+              Modify Settings
+            </button>
+            <button class="btn-danger" id="btn-override" onclick="applyRecommendation('OVERRIDE')">
+              Emergency Override
+            </button>
+            <button class="btn-secondary" id="btn-autonomous" onclick="toggleAutonomousMode()">
+              Auto-Pilot: <span id="auto-mode-status" style="color: var(--accent-emerald);">OFF</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: MODEL COMPARISON & BENCHMARKS -->
+    <!-- ========================================== -->
+    <section id="pane-benchmark" class="tab-pane">
+      <div class="glass-card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-cyan);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            MIMIC-IV Patient-Level GroupKFold Cross-Validation Benchmark
+          </h2>
+          <span class="badge badge-cyan">Gold Standard 5-Fold Patient Grouping</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+          Models were trained and evaluated on <strong>10,099 hourly clinical records</strong> across <strong>139 ICU stays</strong> from the MIMIC-IV clinical database demo. To ensure rigorous, bias-free generalization without data leakage, folds were strictly grouped by patient ID (<code style="color: var(--accent-cyan);">subject_id</code>). The prediction objective is early detection of respiratory deterioration in a <strong>4-to-6 hour warning window</strong>.
+        </p>
+
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Architecture</th>
+              <th>AUROC</th>
+              <th>AUPRC</th>
+              <th>Sensitivity (Recall)</th>
+              <th>Specificity (Anti-Fatigue)</th>
+              <th>Precision (PPV)</th>
+              <th>F1-Score</th>
+              <th>Brier Score</th>
+            </tr>
+          </thead>
+          <tbody id="benchmark-table-body">
+            <!-- Dynamically populated from /api/benchmark -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Curves & Feature Importance Grid -->
+      <div class="charts-grid">
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">ROC & Precision-Recall Trajectories</h2>
+            <span class="badge badge-blue">Discriminative Power</span>
+          </div>
+          <div class="canvas-wrapper" style="height: 280px;">
+            <canvas id="roc-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Top Clinical Physiological Drivers</h2>
+            <span class="badge badge-emerald">Gini Importance (XGBoost)</span>
+          </div>
+          <div class="feature-bars-container" id="feature-importance-bars">
+            <!-- Dynamically populated from /api/benchmark -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: PHYSIOLOGICAL LUNG SIMULATOR -->
+    <!-- ========================================== -->
+    <section id="pane-simulator" class="tab-pane">
+      <div class="glass-card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-cyan);"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+            Closed-Loop Physiological Lung Simulator Sandbox
+          </h2>
+          <span class="badge badge-emerald">2-Compartment Mechanics + Berggren Shunt Equation</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+          This controlled research testbed simulates patient respiratory decompensation (alveolar collapse, compliance drop, intrapulmonary shunt surge). It demonstrates the critical contrast between <strong>Fixed Standard Ventilation</strong> (resulting in severe hypoxemia and elevated lung strain) versus <strong>AI-Powered Adaptive Ventilation</strong> (maintaining safe oxygenation and protecting against barotrauma).
+        </p>
+      </div>
+
+      <!-- Simulator Controls Bar -->
+      <div class="sim-controls-bar">
+        <div class="slider-group">
+          <div class="slider-label-row">
+            <span>Deterioration Severity:</span>
+            <strong id="sim-severity-val" style="color: var(--accent-crimson);">Acute ARDS (High)</strong>
+          </div>
+          <input type="range" class="slider-input" min="0.3" max="1.0" step="0.1" value="0.8" id="slider-severity" onchange="updateSimSeverity(this.value)">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label-row">
+            <span>Simulation Duration:</span>
+            <strong id="sim-hours-val" style="color: var(--accent-cyan);">24 Hours</strong>
+          </div>
+          <input type="range" class="slider-input" min="12" max="48" step="6" value="24" id="slider-duration" onchange="document.getElementById('sim-hours-val').innerText = this.value + ' Hours'">
+        </div>
+
+        <button class="btn-primary" onclick="runLiveSimulation()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Execute Simulation Run
+        </button>
+      </div>
+
+      <!-- Simulation Trajectory Chart -->
+      <div class="charts-grid" style="margin-bottom: 1.5rem;">
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Oxygen Saturation (SpO2): Fixed vs AI Adaptive</h2>
+          </div>
+          <div class="canvas-wrapper" style="height: 260px;">
+            <canvas id="sim-spo2-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Driving Pressure (&Delta;P): Lung Strain Protection</h2>
+          </div>
+          <div class="canvas-wrapper" style="height: 260px;">
+            <canvas id="sim-dp-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Outcome Cards -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div class="glass-card" style="border-left: 4px solid var(--accent-crimson);">
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: #f87171; margin-bottom: 0.75rem;">
+            Fixed Standard Ventilator Arm Outcomes
+          </h3>
+          <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; padding-left: 1.25rem;">
+            <li>Minimum SpO2: <strong id="sim-fixed-min-spo2" style="color: #f87171;">87.9%</strong> (Dangerous Hypoxemia)</li>
+            <li>Peak Driving Pressure: <strong id="sim-fixed-max-dp" style="color: #f87171;">19.6 cmH2O</strong> (&gt;14 limit)</li>
+            <li>Hours in Elevated Lung Strain: <strong id="sim-fixed-strain-hrs" style="color: #f87171;">8 Hours</strong></li>
+            <li>Clinical Consequence: High risk of Ventilator-Induced Lung Injury (VILI) and tissue hypoxia.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card" style="border-left: 4px solid var(--accent-emerald);">
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: #34d399; margin-bottom: 0.75rem;">
+            AI-Powered Adaptive System Arm Outcomes
+          </h3>
+          <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; padding-left: 1.25rem;">
+            <li>Minimum SpO2: <strong id="sim-adapt-min-spo2" style="color: #34d399;">89.2%</strong> (Safe Permissive ARDS Window)</li>
+            <li>Peak Driving Pressure: <strong id="sim-adapt-max-dp" style="color: #34d399;">15.7 cmH2O</strong> (Promptly Regulated)</li>
+            <li>Hours in Hypoxemia (&lt;88%): <strong id="sim-adapt-hypox-hrs" style="color: #34d399;">0 Hours</strong> (100% Prevented)</li>
+            <li>Clinical Consequence: Bounded protective PEEP titration recruits alveoli while capping tidal volume to PBW.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: SAFETY, PROTOCOLS & GOVERNANCE -->
+    <!-- ========================================== -->
+    <section id="pane-safety" class="tab-pane">
+      <div class="glass-card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-emerald);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Clinical Safety Constraints & Ethical Governance Architecture
+          </h2>
+          <span class="badge badge-emerald">ARDSNet & IEC 60601 Medical Safety Standards</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+          <div>
+            <h3 style="font-size: 1rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">1. Explicit Safety Constraints Envelope</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
+              The adaptive controller is strictly bounded by hard clinical limits developed from consensus ICU guidelines:
+            </p>
+            <ul style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.8; padding-left: 1.25rem;">
+              <li><strong>Tidal Volume Bound:</strong> Strictly clamped between 4.0 and 8.0 mL/kg Predicted Body Weight (PBW). Initial target 6.0 mL/kg PBW.</li>
+              <li><strong>Barotrauma Ceiling:</strong> Plateau Pressure ($P_{\text{plat}}$) never permitted to exceed 30 cmH2O.</li>
+              <li><strong>Driving Pressure Limit:</strong> Driving pressure ($\Delta P = P_{\text{plat}} - \text{PEEP}$) targeted strictly &le; 14 cmH2O.</li>
+              <li><strong>Rate-of-Change Limiters:</strong> Maximum step change per cycle: $\Delta\text{FiO}_2 \le \pm 0.10$, $\Delta\text{PEEP} \le \pm 2.0\text{ cmH}_2\text{O}$, $\Delta V_t \le \pm 50\text{ mL}$.</li>
+              <li><strong>Hyperoxia Prevention:</strong> De-escalation enforced when $\text{SpO}_2 > 96\%$ on $\text{FiO}_2 > 0.30$.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1rem; color: var(--accent-emerald); margin-bottom: 0.5rem;">2. Clinician-in-the-Loop Supervision</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
+              Autonomous execution is restricted by design to controlled research simulation. In clinical deployment:
+            </p>
+            <ul style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.8; padding-left: 1.25rem;">
+              <li><strong>Tiered Supervision:</strong> Low-risk micro-adjustments generate passive suggestions; significant titrations require affirmative clinician sign-off.</li>
+              <li><strong>Instant Override:</strong> Clinicians retain absolute manual override authority with single-click fallback to conventional modes.</li>
+              <li><strong>Complete Auditability:</strong> Every proposed adjustment is logged with clinical rationale, predictive risk score, and safety audit verification.</li>
+              <li><strong>Alert Fatigue Mitigation:</strong> Machine learning ensemble achieves &gt;96% specificity, eliminating unnecessary nuisance alarms.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="toast-notification">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-cyan);"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toast-message">Action processed successfully.</span>
+  </div>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>

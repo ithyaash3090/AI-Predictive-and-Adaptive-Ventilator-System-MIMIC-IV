@@ -1,0 +1,2294 @@
+{
+  "scenario": "acute_lung_injury",
+  "total_steps": 24,
+  "summary": {
+    "fixed_strategy": {
+      "min_spo2": 87.9,
+      "mean_spo2": 93.8,
+      "max_driving_pressure": 19.6,
+      "mean_driving_pressure": 13.0,
+      "max_plateau_pressure": 24.6,
+      "hours_in_hypoxemia": 1,
+      "hours_in_high_driving_pressure": 8
+    },
+    "adaptive_strategy": {
+      "min_spo2": 89.2,
+      "mean_spo2": 94.6,
+      "max_driving_pressure": 15.7,
+      "mean_driving_pressure": 10.8,
+      "max_plateau_pressure": 23.5,
+      "hours_in_hypoxemia": 0,
+      "hours_in_high_driving_pressure": 4
+    }
+  },
+  "fixed_history": [
+    {
+      "step": 0,
+      "hour": 0,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 1,
+      "hour": 1,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 2,
+      "hour": 2,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 3,
+      "hour": 3,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 4,
+      "hour": 4,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 5,
+      "hour": 5,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 15.3,
+        "driving_pressure": 10.3,
+        "peak_insp_pressure": 21.7,
+        "effective_compliance": 46.5,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 93.5,
+        "spo2": 96.8,
+        "effective_shunt": 0.16,
+        "sf_ratio": 276.6,
+        "pf_ratio": 267.2,
+        "rox_index": 17.29,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.244,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 6,
+      "hour": 6,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 16.2,
+        "driving_pressure": 11.2,
+        "peak_insp_pressure": 22.6,
+        "effective_compliance": 43.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 81.4,
+        "spo2": 95.4,
+        "effective_shunt": 0.2,
+        "sf_ratio": 272.6,
+        "pf_ratio": 232.5,
+        "rox_index": 17.04,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.338,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 7,
+      "hour": 7,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 17.2,
+        "driving_pressure": 12.2,
+        "peak_insp_pressure": 23.6,
+        "effective_compliance": 39.5,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 73.4,
+        "spo2": 93.9,
+        "effective_shunt": 0.24,
+        "sf_ratio": 268.3,
+        "pf_ratio": 209.6,
+        "rox_index": 16.77,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.431,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 8,
+      "hour": 8,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 18.3,
+        "driving_pressure": 13.3,
+        "peak_insp_pressure": 24.7,
+        "effective_compliance": 36.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 67.5,
+        "spo2": 92.5,
+        "effective_shunt": 0.28,
+        "sf_ratio": 264.3,
+        "pf_ratio": 193.0,
+        "rox_index": 16.52,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.525,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 9,
+      "hour": 9,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 19.8,
+        "driving_pressure": 14.8,
+        "peak_insp_pressure": 26.2,
+        "effective_compliance": 32.5,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 63.0,
+        "spo2": 91.1,
+        "effective_shunt": 0.32,
+        "sf_ratio": 260.3,
+        "pf_ratio": 180.0,
+        "rox_index": 16.27,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.619,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 10,
+      "hour": 10,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 21.6,
+        "driving_pressure": 16.6,
+        "peak_insp_pressure": 28.0,
+        "effective_compliance": 29.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 59.3,
+        "spo2": 89.7,
+        "effective_shunt": 0.36,
+        "sf_ratio": 256.3,
+        "pf_ratio": 169.4,
+        "rox_index": 16.02,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.713,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 11,
+      "hour": 11,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 22.4,
+        "driving_pressure": 17.4,
+        "peak_insp_pressure": 28.8,
+        "effective_compliance": 27.6,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 58.0,
+        "spo2": 89.1,
+        "effective_shunt": 0.376,
+        "sf_ratio": 254.6,
+        "pf_ratio": 165.7,
+        "rox_index": 15.91,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.75,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 12,
+      "hour": 12,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 19.5,
+        "driving_pressure": 14.5,
+        "peak_insp_pressure": 25.9,
+        "effective_compliance": 33.2,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 63.8,
+        "spo2": 91.4,
+        "effective_shunt": 0.312,
+        "sf_ratio": 261.1,
+        "pf_ratio": 182.3,
+        "rox_index": 16.32,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.6,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 13,
+      "hour": 13,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 17.4,
+        "driving_pressure": 12.4,
+        "peak_insp_pressure": 23.8,
+        "effective_compliance": 38.8,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 72.1,
+        "spo2": 93.7,
+        "effective_shunt": 0.248,
+        "sf_ratio": 267.7,
+        "pf_ratio": 205.9,
+        "rox_index": 16.73,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.45,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 14,
+      "hour": 14,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 15.8,
+        "driving_pressure": 10.8,
+        "peak_insp_pressure": 22.2,
+        "effective_compliance": 44.4,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 85.5,
+        "spo2": 95.9,
+        "effective_shunt": 0.184,
+        "sf_ratio": 274.0,
+        "pf_ratio": 244.4,
+        "rox_index": 17.13,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.3,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 15,
+      "hour": 15,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.15,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 16,
+      "hour": 16,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 24.6,
+        "driving_pressure": 19.6,
+        "peak_insp_pressure": 31.0,
+        "effective_compliance": 24.4,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 55.4,
+        "spo2": 87.9,
+        "effective_shunt": 0.411,
+        "sf_ratio": 251.1,
+        "pf_ratio": 158.4,
+        "rox_index": 15.7,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.822,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 17,
+      "hour": 17,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 22.9,
+        "driving_pressure": 17.9,
+        "peak_insp_pressure": 29.3,
+        "effective_compliance": 26.9,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 57.5,
+        "spo2": 88.9,
+        "effective_shunt": 0.382,
+        "sf_ratio": 254.0,
+        "pf_ratio": 164.4,
+        "rox_index": 15.88,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.744,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 18,
+      "hour": 18,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 21.4,
+        "driving_pressure": 16.4,
+        "peak_insp_pressure": 27.8,
+        "effective_compliance": 29.3,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 59.9,
+        "spo2": 89.9,
+        "effective_shunt": 0.353,
+        "sf_ratio": 256.9,
+        "pf_ratio": 171.1,
+        "rox_index": 16.05,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.667,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 19,
+      "hour": 19,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 20.1,
+        "driving_pressure": 15.1,
+        "peak_insp_pressure": 26.5,
+        "effective_compliance": 31.8,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 62.5,
+        "spo2": 91.0,
+        "effective_shunt": 0.324,
+        "sf_ratio": 260.0,
+        "pf_ratio": 178.7,
+        "rox_index": 16.25,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.589,
+      "lung_injury_alert": true
+    },
+    {
+      "step": 20,
+      "hour": 20,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 19.0,
+        "driving_pressure": 14.0,
+        "peak_insp_pressure": 25.4,
+        "effective_compliance": 34.2,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 65.6,
+        "spo2": 92.0,
+        "effective_shunt": 0.296,
+        "sf_ratio": 262.9,
+        "pf_ratio": 187.5,
+        "rox_index": 16.43,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.511,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 21,
+      "hour": 21,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 18.1,
+        "driving_pressure": 13.1,
+        "peak_insp_pressure": 24.5,
+        "effective_compliance": 36.7,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 69.3,
+        "spo2": 93.0,
+        "effective_shunt": 0.267,
+        "sf_ratio": 265.7,
+        "pf_ratio": 198.0,
+        "rox_index": 16.61,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.433,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 22,
+      "hour": 22,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 17.3,
+        "driving_pressure": 12.3,
+        "peak_insp_pressure": 23.7,
+        "effective_compliance": 39.1,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 73.8,
+        "spo2": 94.0,
+        "effective_shunt": 0.238,
+        "sf_ratio": 268.6,
+        "pf_ratio": 210.7,
+        "rox_index": 16.79,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.356,
+      "lung_injury_alert": false
+    },
+    {
+      "step": 23,
+      "hour": 23,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 16.6,
+        "driving_pressure": 11.6,
+        "peak_insp_pressure": 23.0,
+        "effective_compliance": 41.6,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 79.3,
+        "spo2": 95.0,
+        "effective_shunt": 0.209,
+        "sf_ratio": 271.4,
+        "pf_ratio": 226.7,
+        "rox_index": 16.96,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.278,
+      "lung_injury_alert": false
+    }
+  ],
+  "adaptive_history": [
+    {
+      "step": 0,
+      "hour": 0,
+      "settings": {
+        "fio2": 0.35,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 116.1,
+        "spo2": 98.2,
+        "effective_shunt": 0.12,
+        "sf_ratio": 280.6,
+        "pf_ratio": 331.7,
+        "rox_index": 17.54,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.35,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": -0.05,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.14,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "SpO2 (98.2%) is above target range. Weaning oxygen support to prevent absorption atelectasis and hyperoxic injury."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 1,
+      "hour": 1,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 104.2,
+        "spo2": 97.6,
+        "effective_shunt": 0.12,
+        "sf_ratio": 325.3,
+        "pf_ratio": 347.4,
+        "rox_index": 20.33,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.14,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": false
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 2,
+      "hour": 2,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 104.2,
+        "spo2": 97.6,
+        "effective_shunt": 0.12,
+        "sf_ratio": 325.3,
+        "pf_ratio": 347.4,
+        "rox_index": 20.33,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.14,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": false
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 3,
+      "hour": 3,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 104.2,
+        "spo2": 97.6,
+        "effective_shunt": 0.12,
+        "sf_ratio": 325.3,
+        "pf_ratio": 347.4,
+        "rox_index": 20.33,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.14,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": false
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 4,
+      "hour": 4,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 14.6,
+        "driving_pressure": 9.6,
+        "peak_insp_pressure": 21.0,
+        "effective_compliance": 50.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 104.2,
+        "spo2": 97.6,
+        "effective_shunt": 0.12,
+        "sf_ratio": 325.3,
+        "pf_ratio": 347.4,
+        "rox_index": 20.33,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.14,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.14,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": false
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 5,
+      "hour": 5,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 15.3,
+        "driving_pressure": 10.3,
+        "peak_insp_pressure": 21.7,
+        "effective_compliance": 46.5,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 87.8,
+        "spo2": 96.2,
+        "effective_shunt": 0.16,
+        "sf_ratio": 320.7,
+        "pf_ratio": 292.7,
+        "rox_index": 20.04,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.244,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.244,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": false
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 6,
+      "hour": 6,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 16.2,
+        "driving_pressure": 11.2,
+        "peak_insp_pressure": 22.6,
+        "effective_compliance": 43.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 77.9,
+        "spo2": 94.8,
+        "effective_shunt": 0.2,
+        "sf_ratio": 316.0,
+        "pf_ratio": 259.7,
+        "rox_index": 19.75,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.338,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.338,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 7,
+      "hour": 7,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 17.2,
+        "driving_pressure": 12.2,
+        "peak_insp_pressure": 23.6,
+        "effective_compliance": 39.5,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 71.0,
+        "spo2": 93.4,
+        "effective_shunt": 0.24,
+        "sf_ratio": 311.3,
+        "pf_ratio": 236.7,
+        "rox_index": 19.46,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.431,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.431,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 8,
+      "hour": 8,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 18.3,
+        "driving_pressure": 13.3,
+        "peak_insp_pressure": 24.7,
+        "effective_compliance": 36.0,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 65.8,
+        "spo2": 92.0,
+        "effective_shunt": 0.28,
+        "sf_ratio": 306.7,
+        "pf_ratio": 219.4,
+        "rox_index": 19.17,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.525,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.86,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.525,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 9,
+      "hour": 9,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 480.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 19.8,
+        "driving_pressure": 14.8,
+        "peak_insp_pressure": 26.2,
+        "effective_compliance": 32.5,
+        "minute_ventilation": 7.68,
+        "paco2": 36.0,
+        "ph": 7.44,
+        "pao2": 61.7,
+        "spo2": 90.7,
+        "effective_shunt": 0.32,
+        "sf_ratio": 302.3,
+        "pf_ratio": 205.6,
+        "rox_index": 18.9,
+        "vt_per_kg_pbw": 6.86
+      },
+      "predicted_risk": 0.619,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 480.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 455.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.5,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": -25.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.619,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "Excessive driving pressure (14.8 cmH2O > 14.0 cmH2O). High risk of volutrauma/strain.",
+          "Reducing tidal volume to 455 mL (6.5 mL/kg PBW) to lower transpulmonary driving pressure."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": true
+    },
+    {
+      "step": 10,
+      "hour": 10,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 5.0,
+        "tidal_volume_ml": 455.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 20.7,
+        "driving_pressure": 15.7,
+        "peak_insp_pressure": 27.1,
+        "effective_compliance": 29.0,
+        "minute_ventilation": 7.28,
+        "paco2": 38.9,
+        "ph": 7.4,
+        "pao2": 58.2,
+        "spo2": 89.2,
+        "effective_shunt": 0.36,
+        "sf_ratio": 297.3,
+        "pf_ratio": 193.9,
+        "rox_index": 18.58,
+        "vt_per_kg_pbw": 6.5
+      },
+      "predicted_risk": 0.713,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 5.0,
+          "tidal_volume_ml": 455.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 7.0,
+          "tidal_volume_ml": 430.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 6.14,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 2.0,
+          "delta_tidal_volume_ml": -25.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.713,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "Excessive driving pressure (15.7 cmH2O > 14.0 cmH2O). High risk of volutrauma/strain.",
+          "Reducing tidal volume to 430 mL (6.1 mL/kg PBW) to lower transpulmonary driving pressure.",
+          "AI Model predicts high deterioration risk (71.2%) within 4-6h. Enforcing preemptive protective lung stability.",
+          "Preemptively stabilizing functional residual capacity with PEEP set to 8.0 cmH2O."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": true
+    },
+    {
+      "step": 11,
+      "hour": 11,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 7.0,
+        "tidal_volume_ml": 430.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 21.5,
+        "driving_pressure": 14.5,
+        "peak_insp_pressure": 27.9,
+        "effective_compliance": 29.7,
+        "minute_ventilation": 6.88,
+        "paco2": 42.4,
+        "ph": 7.37,
+        "pao2": 61.4,
+        "spo2": 90.5,
+        "effective_shunt": 0.32,
+        "sf_ratio": 301.7,
+        "pf_ratio": 204.6,
+        "rox_index": 18.85,
+        "vt_per_kg_pbw": 6.14
+      },
+      "predicted_risk": 0.75,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 7.0,
+          "tidal_volume_ml": 430.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 5.79,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 2.0,
+          "delta_tidal_volume_ml": -25.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.75,
+        "urgency_level": "CRITICAL",
+        "clinical_rationale": [
+          "Excessive driving pressure (14.5 cmH2O > 14.0 cmH2O). High risk of volutrauma/strain.",
+          "Reducing tidal volume to 405 mL (5.8 mL/kg PBW) to lower transpulmonary driving pressure.",
+          "AI Model predicts high deterioration risk (75.0%) within 4-6h. Enforcing preemptive protective lung stability.",
+          "Preemptively stabilizing functional residual capacity with PEEP set to 8.0 cmH2O."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": true
+    },
+    {
+      "step": 12,
+      "hour": 12,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 405.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 19.7,
+        "driving_pressure": 10.7,
+        "peak_insp_pressure": 26.1,
+        "effective_compliance": 38.0,
+        "minute_ventilation": 6.48,
+        "paco2": 46.5,
+        "ph": 7.33,
+        "pao2": 72.2,
+        "spo2": 93.7,
+        "effective_shunt": 0.227,
+        "sf_ratio": 312.3,
+        "pf_ratio": 240.6,
+        "rox_index": 19.52,
+        "vt_per_kg_pbw": 5.79
+      },
+      "predicted_risk": 0.6,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 5.79,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.6,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 13,
+      "hour": 13,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 405.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 18.1,
+        "driving_pressure": 9.1,
+        "peak_insp_pressure": 24.5,
+        "effective_compliance": 44.4,
+        "minute_ventilation": 6.48,
+        "paco2": 46.5,
+        "ph": 7.33,
+        "pao2": 80.9,
+        "spo2": 95.3,
+        "effective_shunt": 0.18,
+        "sf_ratio": 317.7,
+        "pf_ratio": 269.7,
+        "rox_index": 19.85,
+        "vt_per_kg_pbw": 5.79
+      },
+      "predicted_risk": 0.45,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 5.79,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.45,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 14,
+      "hour": 14,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 405.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 17.0,
+        "driving_pressure": 8.0,
+        "peak_insp_pressure": 23.4,
+        "effective_compliance": 50.8,
+        "minute_ventilation": 6.48,
+        "paco2": 46.5,
+        "ph": 7.33,
+        "pao2": 94.8,
+        "spo2": 96.9,
+        "effective_shunt": 0.134,
+        "sf_ratio": 323.0,
+        "pf_ratio": 316.0,
+        "rox_index": 20.19,
+        "vt_per_kg_pbw": 5.79
+      },
+      "predicted_risk": 0.3,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 5.79,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.3,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 15,
+      "hour": 15,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 405.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 16.1,
+        "driving_pressure": 7.1,
+        "peak_insp_pressure": 22.5,
+        "effective_compliance": 57.2,
+        "minute_ventilation": 6.48,
+        "paco2": 46.5,
+        "ph": 7.33,
+        "pao2": 124.1,
+        "spo2": 98.5,
+        "effective_shunt": 0.087,
+        "sf_ratio": 328.3,
+        "pf_ratio": 413.6,
+        "rox_index": 20.52,
+        "vt_per_kg_pbw": 5.79
+      },
+      "predicted_risk": 0.15,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "vt_per_kg_pbw": 5.79,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.15,
+        "urgency_level": "LOW",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": false
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 16,
+      "hour": 16,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 405.0,
+        "respiratory_rate": 16
+      },
+      "vitals": {
+        "plateau_pressure": 23.5,
+        "driving_pressure": 14.5,
+        "peak_insp_pressure": 29.9,
+        "effective_compliance": 28.0,
+        "minute_ventilation": 6.48,
+        "paco2": 46.5,
+        "ph": 7.33,
+        "pao2": 63.3,
+        "spo2": 91.2,
+        "effective_shunt": 0.299,
+        "sf_ratio": 304.0,
+        "pf_ratio": 210.9,
+        "rox_index": 19.0,
+        "vt_per_kg_pbw": 5.79
+      },
+      "predicted_risk": 0.822,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 405.0,
+          "respiratory_rate": 16,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": -25.0,
+          "delta_respiratory_rate": 2
+        },
+        "predicted_risk": 0.822,
+        "urgency_level": "CRITICAL",
+        "clinical_rationale": [
+          "Excessive driving pressure (14.5 cmH2O > 14.0 cmH2O). High risk of volutrauma/strain.",
+          "Reducing tidal volume to 380 mL (5.4 mL/kg PBW) to lower transpulmonary driving pressure.",
+          "Compensating minute ventilation: Respiratory rate adjusted to 18 bpm.",
+          "AI Model predicts high deterioration risk (82.2%) within 4-6h. Enforcing preemptive protective lung stability."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": true
+    },
+    {
+      "step": 17,
+      "hour": 17,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 21.4,
+        "driving_pressure": 12.4,
+        "peak_insp_pressure": 27.8,
+        "effective_compliance": 30.8,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 65.5,
+        "spo2": 91.9,
+        "effective_shunt": 0.278,
+        "sf_ratio": 306.3,
+        "pf_ratio": 218.4,
+        "rox_index": 17.02,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.744,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.744,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "AI Model predicts high deterioration risk (74.4%) within 4-6h. Enforcing preemptive protective lung stability."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 18,
+      "hour": 18,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 20.3,
+        "driving_pressure": 11.3,
+        "peak_insp_pressure": 26.7,
+        "effective_compliance": 33.6,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 68.0,
+        "spo2": 92.7,
+        "effective_shunt": 0.257,
+        "sf_ratio": 309.0,
+        "pf_ratio": 226.8,
+        "rox_index": 17.17,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.667,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.667,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "AI Model predicts high deterioration risk (66.7%) within 4-6h. Enforcing preemptive protective lung stability."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 19,
+      "hour": 19,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 19.5,
+        "driving_pressure": 10.5,
+        "peak_insp_pressure": 25.9,
+        "effective_compliance": 36.4,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 70.9,
+        "spo2": 93.4,
+        "effective_shunt": 0.236,
+        "sf_ratio": 311.3,
+        "pf_ratio": 236.3,
+        "rox_index": 17.3,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.589,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.589,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 20,
+      "hour": 20,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 18.7,
+        "driving_pressure": 9.7,
+        "peak_insp_pressure": 25.1,
+        "effective_compliance": 39.2,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 74.2,
+        "spo2": 94.1,
+        "effective_shunt": 0.215,
+        "sf_ratio": 313.7,
+        "pf_ratio": 247.3,
+        "rox_index": 17.43,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.511,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.511,
+        "urgency_level": "HIGH",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 21,
+      "hour": 21,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 18.1,
+        "driving_pressure": 9.1,
+        "peak_insp_pressure": 24.5,
+        "effective_compliance": 41.9,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 78.1,
+        "spo2": 94.8,
+        "effective_shunt": 0.194,
+        "sf_ratio": 316.0,
+        "pf_ratio": 260.2,
+        "rox_index": 17.56,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.433,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.433,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 22,
+      "hour": 22,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 17.5,
+        "driving_pressure": 8.5,
+        "peak_insp_pressure": 23.9,
+        "effective_compliance": 44.7,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 82.8,
+        "spo2": 95.5,
+        "effective_shunt": 0.173,
+        "sf_ratio": 318.3,
+        "pf_ratio": 275.9,
+        "rox_index": 17.69,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.356,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.356,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    },
+    {
+      "step": 23,
+      "hour": 23,
+      "settings": {
+        "fio2": 0.3,
+        "peep": 9.0,
+        "tidal_volume_ml": 380.0,
+        "respiratory_rate": 18
+      },
+      "vitals": {
+        "plateau_pressure": 17.0,
+        "driving_pressure": 8.0,
+        "peak_insp_pressure": 23.4,
+        "effective_compliance": 47.5,
+        "minute_ventilation": 6.84,
+        "paco2": 45.9,
+        "ph": 7.33,
+        "pao2": 88.6,
+        "spo2": 96.3,
+        "effective_shunt": 0.152,
+        "sf_ratio": 321.0,
+        "pf_ratio": 295.3,
+        "rox_index": 17.83,
+        "vt_per_kg_pbw": 5.43
+      },
+      "predicted_risk": 0.278,
+      "recommendation": {
+        "current_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "mode": "VCV"
+        },
+        "proposed_settings": {
+          "fio2": 0.3,
+          "peep": 9.0,
+          "tidal_volume_ml": 380.0,
+          "respiratory_rate": 18,
+          "vt_per_kg_pbw": 5.43,
+          "mode": "VCV"
+        },
+        "setting_deltas": {
+          "delta_fio2": 0.0,
+          "delta_peep": 0.0,
+          "delta_tidal_volume_ml": 0.0,
+          "delta_respiratory_rate": 0
+        },
+        "predicted_risk": 0.278,
+        "urgency_level": "MODERATE",
+        "clinical_rationale": [
+          "Patient stable within target parameters. Maintain current settings."
+        ],
+        "safety_checks": {
+          "fio2_within_bounds": true,
+          "peep_within_bounds": true,
+          "vt_per_kg_safe": true,
+          "max_step_fio2_passed": true,
+          "max_step_peep_passed": true,
+          "plateau_limit_respected": true
+        },
+        "all_safety_passed": true,
+        "requires_clinician_approval": true
+      },
+      "lung_injury_alert": false
+    }
+  ]
+}
