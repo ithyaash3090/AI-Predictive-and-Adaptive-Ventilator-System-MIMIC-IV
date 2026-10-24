@@ -2,9 +2,9 @@
 
 An end-to-end, clinically grounded artificial intelligence system that combines **early predictive deterioration modeling** on MIMIC-IV clinical time-series with a **bounded adaptive ventilation controller** and an interactive, real-time clinical monitoring station.
 
----
+--- 
 
-## 🌟 Key Features
+## 🌟 Key Features:
 
 1. **Retrospective MIMIC-IV Clinical Pipeline (`src/data/extractor.py`)**
    - Ingests ICU stays, patient demographics, ICD diagnoses/comorbidities, flow-sheet ventilator measurements (`chartevents`), and blood gas laboratory panels (`labevents`).
