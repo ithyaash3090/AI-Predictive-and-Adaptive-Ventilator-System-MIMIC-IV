@@ -8,27 +8,23 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ## 🔹 Phase 0: Team Onboarding & Git Workflow Tutorial (Week 0)
 
-*The objective of Week 0 is for the teammates (Mithun, Manju, Thiyaa) to learn the daily task assignment, branch creation, commit, and Pull Request (PR) workflow with beginner-friendly starter tutorial tasks, practicing the rule of zero direct pushes to `main`.*
+*The objective of Week 0 is for the teammates (Manju, Thiyaa, Mithun) to learn the daily task assignment, branch creation, commit, and Pull Request (PR) workflow with beginner-friendly starter tutorial tasks, practicing the rule of zero direct pushes to `main`.*
 
 ### 📅 Week 0: Starter Tutorial & Git Practice
 #### Slot 1 (Days 1–2) — Starter Tutorial Tasks
-- **Mithun**: `[Task 0.1]` Starter Task: Environment verification & dependency sanity check script (`scripts/verify_setup.py`) *(Active: GitHub Issue #1)*.
-- **Manju**: `[Task 0.2]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`).
-- **Thiyaa**: `[Task 0.3]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`).
-- **Ithyaash**: `[Task 0.4]` Repository configuration, branch protection review, and onboarding PR reviews.
+- **Manju**: `[Task 0.1]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`).
+- **Thiyaa**: `[Task 0.2]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`).
+- **Mithun**: `[Task 0.3]` Starter Task: Environment verification & dependency sanity check script (`scripts/verify_setup.py`) *(Active: GitHub Issue #1)*.
 
-#### Slot 2 (Days 3–4) — First PR Review & Workflow Verification
-- **Mithun**: `[Task 0.5]` Push branch `task/verify-setup` and open Pull Request referencing Issue #1; verify no merge conflicts.
-- **Manju**: `[Task 0.6]` Push branch `task/verify-data-paths` and open Pull Request; verify no merge conflicts.
-- **Thiyaa**: `[Task 0.7]` Push branch `task/verify-web-assets` and open Pull Request; verify no merge conflicts.
-- **Ithyaash**: `[Task 0.8]` Review and test incoming PRs from Mithun, Manju, and Thiyaa on local environment.
+#### Slot 2 (Days 3–4) — First PR Creation & Verification
+- **Manju**: `[Task 0.4]` Push branch `task/verify-data-paths` and open Pull Request; verify no merge conflicts.
+- **Thiyaa**: `[Task 0.5]` Push branch `task/verify-web-assets` and open Pull Request; verify no merge conflicts.
+- **Mithun**: `[Task 0.6]` Push branch `task/verify-setup` and open Pull Request referencing Issue #1; verify no merge conflicts.
 
-#### Slot 3 (Days 5–6) — Branch Merging & Synchronization
-- **All Team Members**: `[Task 0.9]` Sync local `main` branch with merged PRs (`git checkout main && git pull origin main`).
-- **Mithun**: `[Task 0.10]` Test running `python scripts/verify_setup.py` on the synced `main` branch.
-- **Manju**: `[Task 0.11]` Test running `python scripts/verify_data_paths.py` on the synced `main` branch.
-- **Thiyaa**: `[Task 0.12]` Test running `python scripts/verify_web_assets.py` on the synced `main` branch.
-- **Ithyaash**: `[Task 0.13]` Verify repository clean state and approve readiness for Week 1 kick-off.
+#### Slot 3 (Days 5–6) — Local Sync & Script Run Verification
+- **Manju**: `[Task 0.7]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_data_paths.py`.
+- **Thiyaa**: `[Task 0.8]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_web_assets.py`.
+- **Mithun**: `[Task 0.9]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_setup.py`.
 
 ---
 
