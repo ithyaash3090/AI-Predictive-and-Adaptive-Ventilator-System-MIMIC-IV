@@ -6,72 +6,76 @@
 
 ---
 
-## 🎯 1. Project Overview & Pacing (2-Month Timeline)
+## 🎯 1. Project Overview & Timeline (2.5 – 3 Months)
 
-This project spans **2 Months (8 Weeks)** to ensure steady, high-quality development, consistent GitHub activity, and zero burnout. Tasks are assigned as **bite-sized daily or alternate-day issues**.
+This project spans **2.5 to 3 Months (10 to 12 Weeks)**. All machine learning models, features, simulation logic, and dashboards will be built **step-by-step from scratch**. 
 
-### 🗓️ Phase Schedule Summary
+Tasks are assigned as **daily or alternate-day small issues** to ensure consistent git history, steady progress, and zero burnout.
 
 ```
-Month 1: Data, Preprocessing & Core AI Modeling
-├── Phase 1 (Weeks 1–2): Foundation, Environment Setup & Data Pipeline
-└── Phase 2 (Weeks 3–4): Predictive Model Training, GroupKFold & Hyperparameter Tuning
+Month 1: Foundation, Data Ingestion & Feature Engineering
+├── Phase 1 (Weeks 1–3): Environment Onboarding & MIMIC-IV Cohort Extraction
+└── Phase 2A (Weeks 4–5): Feature Engineering & Temporal Rolling Statistics
 
-Month 2: Adaptive Control, Dashboard & Academic Paper
-├── Phase 3 (Weeks 5–6): ARDSNet Adaptive Controller & Real-Time Web Dashboard
-└── Phase 4 (Weeks 7–8): Benchmark Evaluation, Research Paper Polish & Final Defense
+Month 2: Machine Learning Suite & Physiological Controller
+├── Phase 2B (Weeks 6–7): GroupKFold Model Training (Logistic, RF, LightGBM, XGBoost)
+└── Phase 3 (Weeks 8–9): ARDSNet Adaptive Controller & Lung Mechanics Simulator
+
+Month 3: Clinical Dashboard, Validation & Academic Paper
+├── Phase 4A (Weeks 10–11): Web Monitoring Station & Live Telemetry Integration
+└── Phase 4B (Weeks 12): Benchmark Analysis, Research Paper Polish & Final Defense
 ```
 
 ---
 
-## 👥 2. Team Member Focus Areas
+## ⚖️ 2. Workload & Difficulty Hierarchy
 
-To avoid code clashes and ensure smooth parallel development, work is divided across dedicated domains:
+Workload is distributed according to technical complexity, ensuring everyone has meaningful ownership:
 
-| Member | Domain & Focus Area | Typical Deliverables |
-| :--- | :--- | :--- |
-| **Manju** | **Model Evaluation & Visualizations** | Plotting ROC/PR curves, confusion matrices, SHAP/feature importance graphs, statistical comparison charts. |
-| **Thiyaa** | **Clinical Interface & User Experience** | Dark-mode web dashboard UI (`styles.css`, `dashboard.js`), telemetry widgets, alert badges, and end-to-end interface testing. |
-| **Mithun** | **Data Engineering & Cohort Extraction** | MIMIC-IV cohort extraction validation, data sanity scripts (`scripts/`), missing value auditing, and environment checks. |
-| **Ithyaash** | **Predictive Modeling & Control Systems** | Machine learning pipelines, ARDSNet adaptive controller algorithms, 2-compartment lung simulation math, and API service. |
+| Rank | Member | Difficulty Level | Core Responsibilities & Deliverables |
+| :---: | :--- | :---: | :--- |
+| **1** | **Ithyaash** | 🔥 **Heaviest / Hardest** | **Core ML & Control Architecture**: Building the predictive model suite (`src/models/trainer.py`), patient-level GroupKFold cross-validation, LightGBM & XGBoost tuning, loss calibration, ARDSNet bounded adaptive controller math, Berggren shunt equation, and backend integration. |
+| **2** | **Mithun** | ⚡ **2nd Heaviest** | **Data Engineering & Feature Pipelines**: Temporal rolling aggregations (3h/6h rolling vitals), delta trend slopes ($S/F$ ratio, driving pressure rates of change), missing value imputation strategies, and MIMIC-IV cohort validation scripts. |
+| **3** | **Manju** | 📈 **3rd (Moderate)** | **Clinical Metrics & Visualizations**: Building evaluation plotting scripts (`scripts/plot_results.py`), generating publication-quality ROC/PR curves, confusion matrices, SHAP feature rankings, and statistical performance summaries. |
+| **4** | **Thiyaa** | 🎨 **4th (Moderate / UI)** | **Clinical Dashboard & Quality Assurance**: Developing the dark-mode monitoring interface (`styles.css`, `dashboard.js`), live Chart.js telemetry graphs, clinical risk badges (Green/Amber/Red), and end-to-end interface sanity tests. |
 
 ---
 
-## 🗓️ 3. Detailed 4-Phase Roadmap
+## 🗓️ 3. Detailed 4-Phase Roadmap (10 – 12 Weeks)
 
-### 🔹 Phase 1: Foundation, Setup & Data Pipeline (Weeks 1 – 2)
-* **Goal**: Get all teammates onboarded with Git, verify the local environment on your laptops, and inspect the MIMIC-IV dataset.
-* **Key Tasks**:
-  - Environment verification and dependencies setup.
-  - Verifying extracted MIMIC-IV hourly cohort (`outputs/processed_mimic_cohort.csv`).
-  - Exploratory data checks (vital signs ranges, missing lab values).
+### 🔹 Phase 1: Setup, Data Verification & Environment (Weeks 1 – 3)
+* **Goal**: Establish development environments, verify dependencies, and validate the raw MIMIC-IV demo dataset.
+* **Tasks**:
+  - Environment sanity scripts (`scripts/verify_setup.py`).
+  - Auditing ICU stays, demographics, and lab measurement tables.
+  - Setting up GitHub branching and PR workflows.
 
-### 🔹 Phase 2: Core Machine Learning Models (Weeks 3 – 4)
-* **Goal**: Train, tune, and evaluate clinical deterioration models.
-* **Key Tasks**:
-  - Baseline Logistic Regression and Random Forest training.
-  - Advanced XGBoost and LightGBM tuning with patient-level GroupKFold (k=5).
-  - Generating performance comparison tables (AUROC, AUPRC, Sensitivity, Specificity, Brier score).
+### 🔹 Phase 2: Feature Engineering & Machine Learning from Scratch (Weeks 4 – 7)
+* **Goal**: Engineer clinical time-series features and train multi-model predictive benchmarks.
+* **Tasks**:
+  - **Mithun**: Building temporal rolling statistics (means, standard deviations, delta trends for $SpO_2, FiO_2,$ driving pressure).
+  - **Ithyaash**: Implementing `RespiratoryPredictorSuite.train_and_benchmark(...)` with strict patient-level GroupKFold (k=5) to prevent cross-admission leakage.
+  - **Ithyaash**: Training & tuning Logistic Regression (baseline), Random Forest, LightGBM, and XGBoost.
+  - **Manju**: Extracting and plotting ROC curves, Precision-Recall curves, and feature importance rankings.
 
-### 🔹 Phase 3: Adaptive Controller & Web Dashboard (Weeks 5 – 6)
-* **Goal**: Couple the 2-compartment lung simulator to the bounded ARDSNet controller and the interactive web interface.
-* **Key Tasks**:
-  - Validating clinical safety rules ($P_{\text{plat}} \le 30\text{ cmH}_2\text{O}$, $\Delta P \le 14\text{ cmH}_2\text{O}$, $V_t \in 4–8\text{ mL/kg}$).
-  - Live Chart.js telemetry rendering and clinical warning state transitions.
-  - Unit tests verifying control output envelopes.
+### 🔹 Phase 3: Bounded Adaptive Control & Physiological Simulation (Weeks 8 – 9)
+* **Goal**: Build the clinical decision-support controller adhering strictly to ARDSNet lung-protective guidelines.
+* **Tasks**:
+  - **Ithyaash**: Mathematical bounding for tidal volume ($4.0–8.0\text{ mL/kg PBW}$), plateau pressure ($P_{\text{plat}} \le 30\text{ cmH}_2\text{O}$), and rate-of-change limiters.
+  - **Ithyaash & Mithun**: Coupling controller outputs to the 2-compartment lung simulator and Berggren oxygen shunt model.
+  - **Manju**: Generating comparison plots: Standard Fixed Settings vs. AI Adaptive Strategy during lung injury.
 
-### 🔹 Phase 4: Paper Finalization & Project Defense (Weeks 7 – 8)
-* **Goal**: Complete publication-ready documentation and prepare final demo presentation.
-* **Key Tasks**:
-  - Embedding high-resolution figures into `research_paper.md`.
-  - Final code cleanup, license audit, and reproducibility verification.
-  - Final rehearsal of live simulation and presentation slide deck.
+### 🔹 Phase 4: Clinical Web Station & Final Paper Defense (Weeks 10 – 12)
+* **Goal**: Deliver a working real-time clinical monitoring station and complete the academic paper.
+* **Tasks**:
+  - **Thiyaa**: Dark-mode glassmorphic dashboard with live telemetry graphs, risk gauges, and clinician override controls.
+  - **Ithyaash**: FastAPI REST and WebSocket endpoints for streaming patient states.
+  - **Manju**: Finalizing all publication figures and comparative tables.
+  - **All**: Completing `research_paper.md`, rehearsing the final live demo, and preparing presentation slides.
 
 ---
 
 ## ⚠️ 4. Strict Git & Branching Rules (Zero Direct Push to Main)
-
-To protect the codebase and avoid overwriting each other's work, **strict Git rules are enforced for everyone**:
 
 - ❌ **NEVER commit or push directly to `main`.**
 - ❌ **NEVER merge your own Pull Request into `main`.**
@@ -89,6 +93,7 @@ To protect the codebase and avoid overwriting each other's work, **strict Git ru
    ```bash
    git checkout -b task/<short-task-name>
    # Example: git checkout -b task/verify-setup
+   # Example: git checkout -b task/rolling-features
    # Example: git checkout -b task/plot-roc-curves
    ```
 
@@ -108,17 +113,15 @@ To protect the codebase and avoid overwriting each other's work, **strict Git ru
    ```
 
 6. **Open a Pull Request (PR)**:
-   - Go to GitHub and open a Pull Request from your branch into `main`.
+   - On GitHub, open a PR from your branch into `main`.
    - Link your assigned issue in the PR description (e.g., `Closes #1`).
 
 7. **Review & Merge**:
-   - The Pull Request will be reviewed for merge status and potential conflicts.
-   - Once verified, it will be safely merged into `main`.
+   - The Pull Request will be reviewed for merge status and potential conflicts before being safely merged into `main`.
 
 ---
 
 ## 💬 5. Communication & Blockers Protocol
 
-- If you run into any issues (library installation errors, git errors, or questions about the code), **do not stay stuck**.
-- **Post a comment directly on your assigned GitHub issue** describing the error or question so the team can help resolve it quickly.
+- If you run into any issues (library errors, git errors, or questions about the code), **post a comment directly on your assigned GitHub issue**.
 - Deadlines are flexible as long as blockers are communicated before the deadline timestamp!

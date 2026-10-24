@@ -118,16 +118,15 @@ Open your browser to: **`http://127.0.0.1:8000`**
 
 ---
 
-## 📊 Summary of Benchmark Results
+## 📊 Predictive Model Benchmarking Suite (Phase 2 - In Development)
 
-| Model Architecture | AUROC | AUPRC | Sensitivity | Specificity | F1-Score | Brier Score |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Logistic Regression** | $0.8889 \pm 0.0263$ | $0.7172 \pm 0.0350$ | $79.89\%$ | $81.76\%$ | $0.5642$ | $0.1059$ |
-| **Random Forest** | $0.9397 \pm 0.0229$ | $0.8105 \pm 0.0540$ | $77.64\%$ | $96.31\%$ | $0.7661$ | $0.0530$ |
-| **LightGBM** | $0.9345 \pm 0.0248$ | $0.8154 \pm 0.0647$ | $76.89\%$ | **$96.83\%$** | **$0.7765$** | **$0.0452$** |
-| **XGBoost** | **$0.9376 \pm 0.0227$** | **$0.8214 \pm 0.0564$** | $76.65\%$ | $96.47\%$ | $0.7680$ | $0.0465$ |
+The multi-model comparative benchmarking suite (evaluating **Logistic Regression, Random Forest, LightGBM, and XGBoost** using patient-level **GroupKFold (k=5)** cross-validation) is scheduled to be implemented from scratch across **Phase 2**.
 
-**Average Early Warning Lead Time:** **3.83 Hours** prior to acute respiratory deterioration.
+Once built, executing:
+```bash
+python scripts/train_models.py
+```
+will generate the evaluation metrics (AUROC, AUPRC, Sensitivity, Specificity, Brier score), ROC curves, and persist trained model artifacts to `outputs/models/`.
 
 ---
 
