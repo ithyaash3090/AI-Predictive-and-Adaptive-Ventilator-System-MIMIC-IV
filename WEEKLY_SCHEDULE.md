@@ -10,6 +10,8 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 *The objective of Week 0 is for the teammates (Manju, Thiyaa, Mithun) to learn the daily task assignment, branch creation, commit, PR review, and merge conflict resolution with beginner-friendly starter tasks, practicing the rule of zero direct pushes to `main`.*
 
+> 📌 **NOTE**: Week 0 will **officially begin only when the lead announces it**. Any individual warm-up tasks assigned before that are independent practice exercises.
+
 > [!IMPORTANT]
 > 🛑 **MANDATORY POLICY FOR WEEK 0 (HANDS-ON MANUAL GIT MASTERY)**:  
 > - **The Goal**: Build genuine personal confidence and terminal muscle memory with Git: creating a branch (`git checkout -b ...`), committing, pushing to remote (`git push -u origin ...`), opening a PR, understanding merge conflicts, and syncing `main`.  
@@ -20,7 +22,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 #### Slot 1 (Days 1–2) — Starter Tutorial Tasks
 - **Manju**: `[Task 0.1]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`).
 - **Thiyaa**: `[Task 0.2]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`).
-- **Mithun**: `[Task 0.3]` Starter Task: Environment verification & dependency sanity check script (`scripts/verify_setup.py`) *(Active: GitHub Issue #1)*.
+- **Mithun**: `[Task 0.3]` Starter Task: Environment verification & dependency sanity check script (`scripts/verify_setup.py`).
 
 #### Slot 2 (Days 3–4) — First PR Creation & Verification
 - **Manju**: `[Task 0.4]` Push branch `task/verify-data-paths` and open Pull Request; verify no merge conflicts.
