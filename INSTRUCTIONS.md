@@ -28,16 +28,18 @@ Month 3: Clinical Dashboard, Validation & Academic Paper
 
 ---
 
-## ⚖️ 2. Workload & Difficulty Hierarchy
+## 👥 2. Team Member Focus Areas & Module Ownership
 
-Workload is distributed according to technical complexity, ensuring everyone has meaningful ownership:
+Work is distributed across modular domains, ensuring everyone has meaningful ownership and zero merge conflicts:
 
-| Rank | Member | Difficulty Level | Core Responsibilities & Deliverables |
-| :---: | :--- | :---: | :--- |
-| **1** | **Ithyaash** | 🔥 **Heaviest / Hardest** | **Core ML & Control Architecture**: Building the predictive model suite (`src/models/trainer.py`), patient-level GroupKFold cross-validation, LightGBM & XGBoost tuning, loss calibration, ARDSNet bounded adaptive controller math, Berggren shunt equation, and backend integration. |
-| **2** | **Mithun** | ⚡ **2nd Heaviest** | **Data Engineering & Feature Pipelines**: Temporal rolling aggregations (3h/6h rolling vitals), delta trend slopes ($S/F$ ratio, driving pressure rates of change), missing value imputation strategies, and MIMIC-IV cohort validation scripts. |
-| **3** | **Manju** | 📈 **3rd (Moderate)** | **Clinical Metrics & Visualizations**: Building evaluation plotting scripts (`scripts/plot_results.py`), generating publication-quality ROC/PR curves, confusion matrices, SHAP feature rankings, and statistical performance summaries. |
-| **4** | **Thiyaa** | 🎨 **4th (Moderate / UI)** | **Clinical Dashboard & Quality Assurance**: Developing the dark-mode monitoring interface (`styles.css`, `dashboard.js`), live Chart.js telemetry graphs, clinical risk badges (Green/Amber/Red), and end-to-end interface sanity tests. |
+| Member | Focus Area | Core Responsibilities & Deliverables |
+| :--- | :--- | :--- |
+| **Manju** | **Model Evaluation & Visualizations** | Building evaluation plotting scripts (`scripts/plot_results.py`), generating publication-quality ROC/PR curves, confusion matrices, SHAP feature rankings, and statistical performance summaries. |
+| **Thiyaa** | **Clinical Interface & User Experience** | Developing the dark-mode monitoring interface (`styles.css`, `dashboard.js`), live Chart.js telemetry graphs, clinical risk badges (Green/Amber/Red), and end-to-end interface sanity tests. |
+| **Mithun** | **Data Engineering & Preprocessing** | Temporal rolling aggregations (3h/6h rolling vitals), delta trend slopes ($S/F$ ratio, driving pressure rates of change), missing value imputation strategies, and MIMIC-IV cohort validation scripts. |
+| **Ithyaash** | **Predictive Modeling & Control Architecture** | Building the predictive model suite (`src/models/trainer.py`), patient-level GroupKFold cross-validation, LightGBM & XGBoost tuning, loss calibration, ARDSNet bounded adaptive controller math, Berggren shunt equation, and backend integration. |
+
+> 📌 **Day-by-Day Issue Schedule**: For the full list of tasks assigned every 2 days across all 12 weeks, refer to **[`WEEKLY_SCHEDULE.md`](file:///c:/backup/college/Projects/AI-Predictive-and-Adaptive-Ventilator-System-MIMIC-IV/WEEKLY_SCHEDULE.md)**.
 
 ---
 
