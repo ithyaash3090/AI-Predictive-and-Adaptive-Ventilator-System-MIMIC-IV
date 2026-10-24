@@ -1,0 +1,8 @@
+# ==============================================================================
+# GitHub CODEOWNERS
+# ==============================================================================
+# Only repository lead ithyaash3090 is allowed to review, approve, and modify
+# the project master schedule.
+# ==============================================================================
+
+/WEEKLY_SCHEDULE.md @ithyaash3090

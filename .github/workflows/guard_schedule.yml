@@ -1,0 +1,45 @@
+name: Guard WEEKLY_SCHEDULE.md Access
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'WEEKLY_SCHEDULE.md'
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  verify-schedule-access:
+    name: Check Schedule Authorization
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect PR Author
+        id: check_author
+        run: |
+          AUTHOR="${{ github.event.pull_request.user.login }}"
+          echo "PR Author is: $AUTHOR"
+          if [ "$AUTHOR" != "ithyaash3090" ]; then
+            echo "::error file=WEEKLY_SCHEDULE.md::ACCESS DENIED: Only ithyaash3090 has the access to this weekly_schedule.md file."
+            echo "-----------------------------------------------------------------------------------"
+            echo "⛔ ACCESS DENIED: Only ithyaash3090 has the access to this weekly_schedule.md file."
+            echo "Teammates are prohibited from modifying WEEKLY_SCHEDULE.md."
+            echo "Please revert any changes to WEEKLY_SCHEDULE.md in your branch before proceeding."
+            echo "-----------------------------------------------------------------------------------"
+            exit 1
+          else
+            echo "✅ Authorization verified: User is repository lead ithyaash3090."
+          fi
+
+      - name: Alert Unauthorized Editor
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "🛑 **ACCESS DENIED**: Only **@ithyaash3090** has the access to this `WEEKLY_SCHEDULE.md` file.\n\nPlease discard your changes to `WEEKLY_SCHEDULE.md` and push an update to your branch:\n```bash\ngit checkout origin/main -- WEEKLY_SCHEDULE.md\ngit commit -m \"revert: discard unauthorized changes to WEEKLY_SCHEDULE.md\"\ngit push\n```"
+            })

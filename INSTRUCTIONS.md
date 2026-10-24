@@ -83,6 +83,7 @@ Work is distributed across modular domains, ensuring everyone has meaningful own
 
 - ❌ **NEVER commit or push directly to `main`.**
 - ❌ **NEVER merge your own Pull Request into `main`.**
+- 🔒 **NEVER edit or commit changes to `WEEKLY_SCHEDULE.md`**: Only **`@ithyaash3090`** has the access to this `WEEKLY_SCHEDULE.md` file. The lead updates this file exclusively after reviewing your PR, running CI checks, and resolving merge status. Any PR modifying `WEEKLY_SCHEDULE.md` will fail CI immediately.
 - 🔄 **ALL code changes must go through a dedicated branch and Pull Request (PR).**
 
 > [!CAUTION]

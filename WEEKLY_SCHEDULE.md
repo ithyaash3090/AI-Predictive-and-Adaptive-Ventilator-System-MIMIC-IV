@@ -1,5 +1,10 @@
 # 🗓️ Master Weekly Task Schedule (Weeks 0 – 12)
 
+> [!CAUTION]
+> 🔒 **ACCESS RESTRICTED: LEAD-ONLY FILE**  
+> **Only `ithyaash3090` has the access to this `WEEKLY_SCHEDULE.md` file.**  
+> Teammates (Manju, Thiyaa, Mithun) must NOT edit, stage, or modify this file in their branches or Pull Requests. The schedule is managed and updated exclusively by `@ithyaash3090` after evaluating PRs, running CI checks, and verifying merge status. Any Pull Request attempting to modify this file will be automatically rejected.
+
 This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive Ventilation Support System**.
 - **Pacing**: 3 tasks per week per member (assigned every 2 days: Days 1–2, Days 3–4, Days 5–6; Day 7 for review and merging).
 - **Rule**: All work must be completed on feature branches (`task/<task-name>`) and submitted via Pull Request to `main`.
