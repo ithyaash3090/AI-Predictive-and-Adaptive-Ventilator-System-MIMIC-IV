@@ -1,6 +1,6 @@
 # AI-Powered Adaptive and Predictive Ventilation Support System for ICU Patients: Retrospective Development on MIMIC-IV and Closed-Loop Physiological Simulation Evaluation
 
-**Authors:** Research Team in Biomedical Engineering & Clinical Machine Learning  
+**Authors:** Manju, Thiyaa, Mithun, Ithyaash  
 **Dataset:** MIMIC-IV Clinical Database (v2.2)  
 **Status:** Academic Research Paper & Technical Blueprint  
 

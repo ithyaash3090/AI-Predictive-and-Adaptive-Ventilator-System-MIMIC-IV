@@ -2,7 +2,10 @@
 
 An end-to-end, clinically grounded artificial intelligence system that combines **early predictive deterioration modeling** on MIMIC-IV clinical time-series with a **bounded adaptive ventilation controller** and an interactive, real-time clinical monitoring station.
 
---- 
+> [!IMPORTANT]
+> 📢 **MANDATORY TEAM NOTICE**: Before picking up or working on any daily tasks, all team members (**Manju, Thiyaa, Mithun, Ithyaash**) must read [INSTRUCTIONS.md](file:///c:/backup/college/Projects/AI-Predictive-and-Adaptive-Ventilator-System-MIMIC-IV/INSTRUCTIONS.md) for our 2-month phase roadmap, assigned domains, and strict Git branching rules (no direct pushes to `main`).
+
+---
 
 ## 🌟 Key Features:
 
@@ -133,3 +136,14 @@ Open your browser to: **`http://127.0.0.1:8000`**
 1. **Strict ARDSNet Envelopes:** No recommendation violates the $4–8\text{ mL/kg PBW}$ tidal volume bound or allows plateau pressure to exceed $30\text{ cmH}_2\text{O}$.
 2. **Anti-Fatigue Specificity:** By achieving $>96.4\%$ specificity, the system suppresses false alarms that plague conventional monitors.
 3. **Clinician In The Loop:** Autonomous mode is isolated to research simulation; clinical station mode mandates clinician confirmation for significant setting migrations and provides instantaneous manual override.
+
+---
+
+## 👥 Project Team & Contributors
+
+| Name | Focus Area | Core Responsibilities |
+| :--- | :--- | :--- |
+| **Manju** | **Model Evaluation & Visualizations** | Performance evaluation metrics (AUROC/AUPRC), feature importance visualizations, confusion matrices, and comparative analysis. |
+| **Thiyaa** | **Clinical Interface & User Experience** | Clinical station web UI design, telemetry monitoring interfaces, styling systems, and end-to-end integration testing. |
+| **Mithun** | **Data Engineering & Cohort Extraction** | MIMIC-IV clinical cohort extraction, data preprocessing scripts, dataset verification, and data integrity checks. |
+| **Ithyaash** | **Predictive Modeling & Control Systems** | Machine learning pipelines, ARDSNet adaptive controller algorithms, physiological simulation coupling, and API service. |
