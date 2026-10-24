@@ -8,7 +8,13 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ## 🔹 Phase 0: Team Onboarding & Git Workflow Tutorial (Week 0)
 
-*The objective of Week 0 is for the teammates (Manju, Thiyaa, Mithun) to learn the daily task assignment, branch creation, commit, and Pull Request (PR) workflow with beginner-friendly starter tutorial tasks, practicing the rule of zero direct pushes to `main`.*
+*The objective of Week 0 is for the teammates (Manju, Thiyaa, Mithun) to learn the daily task assignment, branch creation, commit, PR review, and merge conflict resolution with beginner-friendly starter tasks, practicing the rule of zero direct pushes to `main`.*
+
+> [!IMPORTANT]
+> 🛑 **MANDATORY POLICY FOR WEEK 0 (HANDS-ON MANUAL GIT MASTERY)**:  
+> - **The Goal**: Build genuine personal confidence and terminal muscle memory with Git: creating a branch (`git checkout -b ...`), committing, pushing to remote (`git push -u origin ...`), opening a PR, understanding merge conflicts, and syncing `main`.  
+> - **AI Usage in Week 0**: You may ask AI questions to learn or clarify git concepts, but **AI MUST NOT write or complete your Week 0 tasks for you**. Every terminal command and script must be executed by you manually.  
+> - *(From Week 1 onwards, using AI assistance across the project is completely welcomed!)*
 
 ### 📅 Week 0: Starter Tutorial & Git Practice
 #### Slot 1 (Days 1–2) — Starter Tutorial Tasks

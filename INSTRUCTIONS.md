@@ -85,6 +85,12 @@ Work is distributed across modular domains, ensuring everyone has meaningful own
 - ❌ **NEVER merge your own Pull Request into `main`.**
 - 🔄 **ALL code changes must go through a dedicated branch and Pull Request (PR).**
 
+> [!CAUTION]
+> 🛑 **MANDATORY POLICY FOR WEEK 0 (HANDS-ON MANUAL GIT MASTERY)**:  
+> - **The Objective**: Build genuine personal fluency and terminal muscle memory with Git: creating a branch (`git checkout -b ...`), committing, pushing to remote (`git push -u origin ...`), opening a PR, understanding merge status/conflicts, and syncing `main`.  
+> - **AI Usage in Week 0**: You may ask AI questions to learn or clarify git concepts, but **AI MUST NOT write or complete your Week 0 tasks for you**. Every terminal command and script must be executed by you manually.  
+> - *(From Week 1 onwards, using AI assistance across the project is completely welcomed!)*
+
 ### 🛠️ Daily Step-by-Step Git Workflow:
 
 1. **Pull the latest code from `main`**:
