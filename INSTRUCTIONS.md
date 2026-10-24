@@ -13,6 +13,8 @@ This project spans **2.5 to 3 Months (10 to 12 Weeks)**. All machine learning mo
 Tasks are assigned as **daily or alternate-day small issues** to ensure consistent git history, steady progress, and zero burnout.
 
 ```
+Phase 0 (Week 0): Team Onboarding & Git Workflow Tutorial (Starter Tasks & PRs)
+
 Month 1: Foundation, Data Ingestion & Feature Engineering
 ├── Phase 1 (Weeks 1–3): Environment Onboarding & MIMIC-IV Cohort Extraction
 └── Phase 2A (Weeks 4–5): Feature Engineering & Temporal Rolling Statistics

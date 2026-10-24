@@ -1,8 +1,34 @@
-# 🗓️ Master Weekly Task Schedule (Weeks 1 – 12)
+# 🗓️ Master Weekly Task Schedule (Weeks 0 – 12)
 
 This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive Ventilation Support System**.
 - **Pacing**: 3 tasks per week per member (assigned every 2 days: Days 1–2, Days 3–4, Days 5–6; Day 7 for review and merging).
 - **Rule**: All work must be completed on feature branches (`task/<task-name>`) and submitted via Pull Request to `main`.
+
+---
+
+## 🔹 Phase 0: Team Onboarding & Git Workflow Tutorial (Week 0)
+
+*The objective of Week 0 is for the teammates (Mithun, Manju, Thiyaa) to learn the daily task assignment, branch creation, commit, and Pull Request (PR) workflow with beginner-friendly starter tutorial tasks, practicing the rule of zero direct pushes to `main`.*
+
+### 📅 Week 0: Starter Tutorial & Git Practice
+#### Slot 1 (Days 1–2) — Starter Tutorial Tasks
+- **Mithun**: `[Task 0.1]` Starter Task: Environment verification & dependency sanity check script (`scripts/verify_setup.py`) *(Active: GitHub Issue #1)*.
+- **Manju**: `[Task 0.2]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`).
+- **Thiyaa**: `[Task 0.3]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`).
+- **Ithyaash**: `[Task 0.4]` Repository configuration, branch protection review, and onboarding PR reviews.
+
+#### Slot 2 (Days 3–4) — First PR Review & Workflow Verification
+- **Mithun**: `[Task 0.5]` Push branch `task/verify-setup` and open Pull Request referencing Issue #1; verify no merge conflicts.
+- **Manju**: `[Task 0.6]` Push branch `task/verify-data-paths` and open Pull Request; verify no merge conflicts.
+- **Thiyaa**: `[Task 0.7]` Push branch `task/verify-web-assets` and open Pull Request; verify no merge conflicts.
+- **Ithyaash**: `[Task 0.8]` Review and test incoming PRs from Mithun, Manju, and Thiyaa on local environment.
+
+#### Slot 3 (Days 5–6) — Branch Merging & Synchronization
+- **All Team Members**: `[Task 0.9]` Sync local `main` branch with merged PRs (`git checkout main && git pull origin main`).
+- **Mithun**: `[Task 0.10]` Test running `python scripts/verify_setup.py` on the synced `main` branch.
+- **Manju**: `[Task 0.11]` Test running `python scripts/verify_data_paths.py` on the synced `main` branch.
+- **Thiyaa**: `[Task 0.12]` Test running `python scripts/verify_web_assets.py` on the synced `main` branch.
+- **Ithyaash**: `[Task 0.13]` Verify repository clean state and approve readiness for Week 1 kick-off.
 
 ---
 
