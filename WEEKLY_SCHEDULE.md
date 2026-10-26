@@ -25,19 +25,19 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ### 📅 Week 0: Starter Tutorial & Git Practice
 #### Slot 1 (Days 1–2) — Starter Tutorial Tasks
-- **Manju**: `[Task 0.1]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`) *(Active: GitHub Issue #3 — Deadline: 26 Oct 11:59 PM IST)*.
-- **Thiyaa**: `[Task 0.2]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`) *(Active: GitHub Issue #4 — Deadline: 26 Oct 11:59 PM IST)*.
+- **Manju**: `[Task 0.1]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`) *(Completed: GitHub Issue #3 / PR #6)*.
+- **Thiyaa**: `[Task 0.2]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`) *(Completed: GitHub Issue #4 / PR #7)*.
 - **Mithun**: `[Task 0.3]` Starter Task: Environment verification & dependency sanity check script (`scripts/verify_setup.py`) *(Completed: GitHub Issue #1 / PR #2)*.
 
 #### Slot 2 (Days 3–4) — First PR Creation & Verification
-- **Manju**: `[Task 0.4]` Push branch `task/verify-data-paths` and open Pull Request referencing Issue #3; verify no merge conflicts.
-- **Thiyaa**: `[Task 0.5]` Push branch `task/verify-web-assets` and open Pull Request referencing Issue #4; verify no merge conflicts.
-- **Mithun**: `[Task 0.6]` Push branch `task/verify-setup` and open Pull Request referencing Issue #1; verify no merge conflicts *(Merged into main)*.
+- **Manju**: `[Task 0.4]` Push branch `task/verify-data-paths` and open Pull Request referencing Issue #3; verify no merge conflicts *(Merged into main via PR #6)*.
+- **Thiyaa**: `[Task 0.5]` Push branch `task/verify-web-assets` and open Pull Request referencing Issue #4; verify no merge conflicts *(Merged into main via PR #7)*.
+- **Mithun**: `[Task 0.6]` Push branch `task/verify-setup` and open Pull Request referencing Issue #1; verify no merge conflicts *(Merged into main via PR #2)*.
 
 #### Slot 3 (Days 5–6) — Local Sync & Script Run Verification
-- **Manju**: `[Task 0.7]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_data_paths.py`.
-- **Thiyaa**: `[Task 0.8]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_web_assets.py`.
-- **Mithun**: `[Task 0.9]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_setup.py`.
+- **Manju**: `[Task 0.7]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_data_paths.py` *(Active: GitHub Issue #8 — Deadline: 28 Oct 11:59 PM IST)*.
+- **Thiyaa**: `[Task 0.8]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_web_assets.py` *(Active: GitHub Issue #9 — Deadline: 28 Oct 11:59 PM IST)*.
+- **Mithun**: `[Task 0.9]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_setup.py` *(Active: GitHub Issue #10 — Deadline: 28 Oct 11:59 PM IST)*.
 
 ---
 
