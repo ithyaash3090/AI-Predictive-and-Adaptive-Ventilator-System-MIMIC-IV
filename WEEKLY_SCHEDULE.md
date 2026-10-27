@@ -39,6 +39,11 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 - **Thiyaa**: `[Task 0.8]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_web_assets.py` *(Active: GitHub Issue #9 — Deadline: 28 Oct 11:59 PM IST)*.
 - **Mithun**: `[Task 0.9]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_setup.py` & unified multi-script verification (`scripts/verify_all.py`) *(Completed: GitHub Issue #10 / PR #11)*.
 
+#### Day 7 (Day 7) — Week 0 Final Integration, Team Sync & Milestone Wrap-Up
+- **Manju**: `[Task 0.10]` Full verification suite execution (`python scripts/verify_all.py`) & final sync confirmation *(Active: GitHub Issue #16 — Deadline: 28 Oct 11:59 PM IST)*.
+- **Thiyaa**: `[Task 0.11]` Full verification suite execution (`python scripts/verify_all.py`) & final sync confirmation *(Active: GitHub Issue #17 — Deadline: 28 Oct 11:59 PM IST)*.
+- **Mithun**: `[Task 0.12]` Branch cleanup, full suite verification & Week 0 milestone wrap-up *(Active: GitHub Issue #18 — Deadline: 28 Oct 11:59 PM IST)*.
+
 ---
 
 ## 🔹 Phase 1: Foundation, Data Ingestion & Setup (Weeks 1 – 3)
