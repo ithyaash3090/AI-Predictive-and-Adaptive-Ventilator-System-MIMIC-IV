@@ -45,10 +45,10 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ### 📅 Week 1: Environment, Ingestion & Baseline Sanity
 #### Slot 1 (Days 1–2)
-- **Manju**: `[Task 1.1]` Create patient demographic summary script (`scripts/eda_demographics.py`).
-- **Thiyaa**: `[Task 1.2]` Verify local FastAPI server & static asset loading (`scripts/verify_server.py`).
-- **Mithun**: `[Task 1.3]` Create environment verification and dependency sanity script (`scripts/verify_setup.py`).
-- **Ithyaash**: `[Task 1.4]` Define core model training abstractions and pipeline interfaces in `src/models/trainer.py`.
+- **Manju**: `[Task 1.1]` Create patient demographic summary script (`scripts/eda_demographics.py`) *(Active: GitHub Issue #12 — Deadline: 30 Oct 11:59 PM IST)*.
+- **Thiyaa**: `[Task 1.2]` Verify local FastAPI server & static asset loading (`scripts/verify_server.py`) *(Active: GitHub Issue #13 — Deadline: 30 Oct 11:59 PM IST)*.
+- **Mithun**: `[Task 1.3]` Create dataset table inspector & schema script (`scripts/inspect_tables.py`) *(Active: GitHub Issue #14 — Deadline: 30 Oct 11:59 PM IST)*.
+- **Ithyaash**: `[Task 1.4]` Define core model training abstractions and pipeline interfaces in `src/models/trainer.py` *(Active: GitHub Issue #15 — Deadline: 30 Oct 11:59 PM IST)*.
 
 #### Slot 2 (Days 3–4)
 - **Manju**: `[Task 1.5]` Generate clinical vital signs distribution histograms (`scripts/plot_vital_distributions.py`).
