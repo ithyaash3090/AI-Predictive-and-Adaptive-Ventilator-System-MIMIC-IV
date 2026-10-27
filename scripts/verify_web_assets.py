@@ -3,6 +3,7 @@ Web assets and FastAPI server entry point verification script for MIMIC-IV Venti
 Verifies the existence of HTML templates, CSS/JS static assets, and FastAPI app initialization.
 """
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -59,14 +60,17 @@ def check_static_assets(root_dir: Path) -> bool:
     return all_found
 
 
-def check_fastapi_app() -> bool:
-    """Tests importing the FastAPI server instance and verifying title."""
+def check_fastapi_app(check_routes: bool = False) -> bool:
+    """Tests importing the FastAPI server instance and verifying title and optional routes."""
     print("[*] Checking FastAPI application initialization...")
     try:
         from src.web.app import app
 
         if hasattr(app, "title") and app.title:
             print(f"  [PASS] FastAPI app initialized successfully (title: '{app.title}')")
+            if check_routes:
+                route_paths = [route.path for route in app.routes]
+                print(f"  [PASS] Registered {len(route_paths)} API/web routes")
             return True
         else:
             print("  [FAIL] FastAPI app object loaded but title attribute is missing or empty")
@@ -77,6 +81,14 @@ def check_fastapi_app() -> bool:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Verify MIMIC-IV Ventilator web assets and FastAPI server.")
+    parser.add_argument(
+        "--check-routes",
+        action="store_true",
+        help="Inspect registered routes on FastAPI server."
+    )
+    args = parser.parse_args()
+
     print("=" * 65)
     print("MIMIC-IV Ventilator System Web Assets & Server Verification")
     print("=" * 65)
@@ -85,7 +97,7 @@ def main():
     print("-" * 65)
     static_ok = check_static_assets(PROJECT_ROOT)
     print("-" * 65)
-    app_ok = check_fastapi_app()
+    app_ok = check_fastapi_app(check_routes=args.check_routes)
 
     print("=" * 65)
     if templates_ok and static_ok and app_ok:
@@ -98,3 +110,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
