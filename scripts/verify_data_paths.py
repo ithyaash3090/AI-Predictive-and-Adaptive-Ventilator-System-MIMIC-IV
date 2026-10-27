@@ -3,6 +3,9 @@ Dataset path and structure verification script for MIMIC-IV Ventilator System.
 Verifies existence of dataset directories and core clinical table files.
 """
 
+import argparse
+import csv
+import gzip
 import sys
 from pathlib import Path
 
@@ -53,7 +56,29 @@ def format_file_size(size_bytes: int) -> str:
     return f"{size_kb:.1f} KB"
 
 
-def verify_dataset() -> bool:
+def check_table_integrity(resolved_path: Path) -> tuple[bool, str]:
+    """
+    Validates that a resolved table file can be opened and contains a valid header row.
+    Supports both gzip-compressed (.csv.gz) and standard (.csv) files.
+    """
+    try:
+        if resolved_path.name.endswith(".gz"):
+            with gzip.open(resolved_path, "rt", encoding="utf-8", errors="replace") as f:
+                reader = csv.reader(f)
+                header = next(reader, None)
+        else:
+            with open(resolved_path, "r", encoding="utf-8", errors="replace") as f:
+                reader = csv.reader(f)
+                header = next(reader, None)
+
+        if not header:
+            return False, "Empty table or missing header row"
+        return True, f"{len(header)} columns verified"
+    except Exception as e:
+        return False, str(e)
+
+
+def verify_dataset(check_integrity: bool = False) -> bool:
     project_root = Path(__file__).resolve().parent.parent
     base_dir = project_root / REL_DATASET_DIR
 
@@ -91,7 +116,15 @@ def verify_dataset() -> bool:
         resolved_file = resolve_table_path(base_dir, table_rel)
         if resolved_file:
             size_str = format_file_size(resolved_file.stat().st_size)
-            print(f"[PASS] {table_rel} found (size: {size_str})")
+            if check_integrity:
+                ok, integrity_info = check_table_integrity(resolved_file)
+                if ok:
+                    print(f"[PASS] {table_rel} found (size: {size_str}, integrity: {integrity_info})")
+                else:
+                    print(f"[FAIL] {table_rel} integrity check failed: {integrity_info}")
+                    all_passed = False
+            else:
+                print(f"[PASS] {table_rel} found (size: {size_str})")
         else:
             print(f"[FAIL] {table_rel} NOT found")
             all_passed = False
@@ -107,9 +140,17 @@ def verify_dataset() -> bool:
 
 
 def main():
-    success = verify_dataset()
+    parser = argparse.ArgumentParser(description="Verify MIMIC-IV dataset paths and structure.")
+    parser.add_argument(
+        "--check-integrity",
+        action="store_true",
+        help="Perform read integrity and header verification on all resolved clinical tables."
+    )
+    args = parser.parse_args()
+    success = verify_dataset(check_integrity=args.check_integrity)
     sys.exit(0 if success else 1)
 
 
 if __name__ == "__main__":
     main()
+
