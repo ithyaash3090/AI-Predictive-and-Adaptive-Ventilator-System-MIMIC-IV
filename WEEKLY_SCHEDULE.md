@@ -35,14 +35,14 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 - **Mithun**: `[Task 0.6]` Push branch `task/verify-setup` and open Pull Request referencing Issue #1; verify no merge conflicts *(Merged into main via PR #2)*.
 
 #### Slot 3 (Days 5–6) — Local Sync & Script Run Verification
-- **Manju**: `[Task 0.7]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_data_paths.py` *(Active: GitHub Issue #8 — Deadline: 28 Oct 11:59 PM IST)*.
-- **Thiyaa**: `[Task 0.8]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_web_assets.py` *(Active: GitHub Issue #9 — Deadline: 28 Oct 11:59 PM IST)*.
+- **Manju**: `[Task 0.7]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_data_paths.py` *(Completed: GitHub Issue #8 / PR #19)*.
+- **Thiyaa**: `[Task 0.8]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_web_assets.py` *(Completed: GitHub Issue #9 / PR #20)*.
 - **Mithun**: `[Task 0.9]` Sync local `main` branch (`git checkout main && git pull origin main`) and test running `python scripts/verify_setup.py` & unified multi-script verification (`scripts/verify_all.py`) *(Completed: GitHub Issue #10 / PR #11)*.
 
 #### Day 7 (Day 7) — Week 0 Final Integration, Team Sync & Milestone Wrap-Up
-- **Manju**: `[Task 0.10]` Full verification suite execution (`python scripts/verify_all.py`) & final sync confirmation *(Active: GitHub Issue #16 — Deadline: 28 Oct 11:59 PM IST)*.
-- **Thiyaa**: `[Task 0.11]` Full verification suite execution (`python scripts/verify_all.py`) & final sync confirmation *(Active: GitHub Issue #17 — Deadline: 28 Oct 11:59 PM IST)*.
-- **Mithun**: `[Task 0.12]` Branch cleanup, full suite verification & Week 0 milestone wrap-up *(Active: GitHub Issue #18 — Deadline: 28 Oct 11:59 PM IST)*.
+- **Manju**: `[Task 0.10]` Full verification suite execution (`python scripts/verify_all.py`) & final sync confirmation *(Completed: GitHub Issue #16)*.
+- **Thiyaa**: `[Task 0.11]` Full verification suite execution (`python scripts/verify_all.py`) & final sync confirmation *(Completed: GitHub Issue #17)*.
+- **Mithun**: `[Task 0.12]` Branch cleanup, full suite verification & Week 0 milestone wrap-up *(Completed: GitHub Issue #18)*.
 
 ---
 
