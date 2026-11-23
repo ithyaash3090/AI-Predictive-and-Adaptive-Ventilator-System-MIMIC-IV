@@ -286,41 +286,93 @@ class MimicIvExtractor:
         logger.info(f"Successfully constructed hourly timeseries: {len(full_ts)} hourly records across {full_ts['stay_id'].nunique()} ICU stays.")
         return full_ts
 
-    def label_respiratory_deterioration(self, df_ts, lookahead_hours=4):
+    def label_respiratory_deterioration(self, df_ts: pd.DataFrame, lookahead_hours: int = 4) -> pd.DataFrame:
         """
-        Defines clinically grounded Respiratory Deterioration event:
-        A deterioration occurs at time t if in the forward window [t+1, t+lookahead_hours]:
-        1. Severe hypoxemia: SpO2/FiO2 < 180 (equivalent to PaO2/FiO2 < 150) OR PaO2/FiO2 < 150
-        2. Escalation requirement: PEEP increased by >= 3 cmH2O or FiO2 increased to >= 0.70 with SpO2 < 90%
-        3. Ventilatory / Lung Injury Danger: Driving pressure > 18 cmH2O or (pH < 7.25 and PaCO2 > 50)
-        4. Respiratory Exhaustion: RR >= 32 with ROX Index < 4.88
+        Defines clinically grounded Respiratory Deterioration event aligned with Berlin 2012 ARDS Definition:
+        
+        A patient hour t experiences an 'instant deterioration' if any of the following 5 clinical criteria trigger:
+        1. Severe Hypoxemia:
+           - PaO2/FiO2 <= 200 mmHg (Moderate-to-Severe ARDS cutoff per Berlin Definition)
+           - OR SpO2/FiO2 < 180 (Non-invasive validated surrogate for P/F <= 150-200)
+        2. Escalation Requirement:
+           - FiO2 >= 0.70 with concurrent SpO2 < 90% (refractory hypoxemia despite high fraction)
+        3. Ventilatory / Lung Injury Danger:
+           - Driving pressure (Pplat - PEEP) > 18.0 cmH2O (excessive transpulmonary mechanical stress)
+           - OR Acute Respiratory Acidosis (arterial pH < 7.25 and PaCO2 > 50.0 mmHg)
+        4. Tachypneic Exhaustion / Impending Ventilatory Failure:
+           - Respiratory Rate >= 32 breaths/min with ROX Index < 4.88 (validated intubation/failure threshold)
+
+        Lookahead Target Construction:
+        The forward predictive target for hour t is 1 if ANY instant deterioration occurs strictly in
+        the forward window [t + 1, t + lookahead_hours], and 0 otherwise.
+        Hour t itself is strictly excluded from its own forward label to prevent lookahead data leakage.
         """
         logger.info(f"Labeling respiratory deterioration events (lookahead={lookahead_hours}h)...")
         
-        # Clinical condition flag at current step
-        hypoxemia = (df_ts['sf_ratio'] < 180) | (df_ts['pf_ratio'] < 150)
-        high_support = (df_ts['fio2'] >= 0.70) & (df_ts['spo2'] < 90)
+        # 1. Clinical condition flags at current step
+        hypoxemia = (df_ts['sf_ratio'] < 180.0) | (df_ts['pf_ratio'] <= 200.0)
+        high_support = (df_ts['fio2'] >= 0.70) & (df_ts['spo2'] < 90.0)
         high_driving_p = df_ts['driving_pressure'] > 18.0
         resp_acidosis = (df_ts['ph'] < 7.25) & (df_ts['paco2'] > 50.0)
-        resp_exhaustion = (df_ts['respiratory_rate'] >= 32) & (df_ts['rox_index'] < 4.88)
+        resp_exhaustion = (df_ts['respiratory_rate'] >= 32.0) & (df_ts['rox_index'] < 4.88)
 
-        instant_deterioration = (hypoxemia | high_support | high_driving_p | resp_acidosis | resp_exhaustion).astype(int)
+        # Store individual component flags for auditability
+        df_ts['flag_hypoxemia'] = hypoxemia.fillna(False).astype(int)
+        df_ts['flag_high_support'] = high_support.fillna(False).astype(int)
+        df_ts['flag_high_driving_pressure'] = high_driving_p.fillna(False).astype(int)
+        df_ts['flag_respiratory_acidosis'] = resp_acidosis.fillna(False).astype(int)
+        df_ts['flag_respiratory_exhaustion'] = resp_exhaustion.fillna(False).astype(int)
+
+        instant_deterioration = (
+            hypoxemia | high_support | high_driving_p | resp_acidosis | resp_exhaustion
+        ).fillna(False).astype(int)
         df_ts['instant_deterioration'] = instant_deterioration
 
-        # Lookahead label: max of instant deterioration in the next 1 to lookahead_hours
+        # 2. Lookahead target: max of instant deterioration in forward window [t+1, t+lookahead_hours]
         df_ts = df_ts.sort_values(['stay_id', 'hour_from_intime']).reset_index(drop=True)
         
-        # Groupby stay_id and rolling reverse lookahead
-        def compute_forward_target(group):
-            # Reverse rolling max excluding current step
-            rev_events = group['instant_deterioration'].iloc[::-1]
-            # Rolling window of size lookahead_hours shifted by 1 (future only)
-            rolled = rev_events.rolling(window=lookahead_hours, min_periods=1).max().shift(1).iloc[::-1]
-            group['target_deterioration_lead'] = rolled.fillna(0).astype(int)
-            return group
+        def compute_forward_target(s: pd.Series) -> pd.Series:
+            # Reverse series so rolling window looks into future
+            rev_events = s.iloc[::-1]
+            # Shift by 1 step to exclude current time t (strictly t+1 to t+lookahead_hours)
+            return rev_events.rolling(window=lookahead_hours, min_periods=1).max().shift(1).iloc[::-1]
 
-        df_labeled = df_ts.groupby('stay_id', group_keys=False).apply(compute_forward_target)
+        rolled = df_ts.groupby('stay_id')['instant_deterioration'].transform(compute_forward_target)
+        df_ts['target_deterioration_lead'] = rolled.fillna(0).astype(int)
+        df_ts['deterioration_next_4h'] = df_ts['target_deterioration_lead']
+        df_labeled = df_ts
         
         pos_rate = df_labeled['target_deterioration_lead'].mean()
         logger.info(f"Deterioration labeling complete. Total hours: {len(df_labeled)}, Positive event rate: {pos_rate:.2%}")
         return df_labeled
+
+    @staticmethod
+    def audit_label_distribution(df_labeled: pd.DataFrame) -> dict:
+        """
+        Computes detailed statistical audit of deterioration labels and criteria breakdown.
+        """
+        total_rows = len(df_labeled)
+        total_stays = df_labeled['stay_id'].nunique() if 'stay_id' in df_labeled.columns else 0
+        total_patients = df_labeled['subject_id'].nunique() if 'subject_id' in df_labeled.columns else 0
+
+        target_col = 'target_deterioration_lead' if 'target_deterioration_lead' in df_labeled.columns else 'deterioration_next_4h'
+        pos_count = int(df_labeled[target_col].sum()) if target_col in df_labeled.columns else 0
+        neg_count = total_rows - pos_count
+
+        flags = {
+            'hypoxemia': int(df_labeled['flag_hypoxemia'].sum()) if 'flag_hypoxemia' in df_labeled.columns else 0,
+            'high_support': int(df_labeled['flag_high_support'].sum()) if 'flag_high_support' in df_labeled.columns else 0,
+            'high_driving_pressure': int(df_labeled['flag_high_driving_pressure'].sum()) if 'flag_high_driving_pressure' in df_labeled.columns else 0,
+            'respiratory_acidosis': int(df_labeled['flag_respiratory_acidosis'].sum()) if 'flag_respiratory_acidosis' in df_labeled.columns else 0,
+            'respiratory_exhaustion': int(df_labeled['flag_respiratory_exhaustion'].sum()) if 'flag_respiratory_exhaustion' in df_labeled.columns else 0,
+        }
+
+        return {
+            'total_rows': total_rows,
+            'total_stays': total_stays,
+            'total_patients': total_patients,
+            'positive_count': pos_count,
+            'negative_count': neg_count,
+            'positive_prevalence': float(pos_count / total_rows) if total_rows > 0 else 0.0,
+            'criteria_breakdown': flags,
+        }
