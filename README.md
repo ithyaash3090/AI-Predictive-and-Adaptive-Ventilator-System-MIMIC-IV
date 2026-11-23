@@ -1,13 +1,12 @@
 # AI-Powered Adaptive and Predictive Ventilation Support System for ICU Patients
 
-An end-to-end, clinically grounded artificial intelligence system that combines **early predictive deterioration modeling** on MIMIC-IV clinical time-series with a **bounded adaptive ventilation controller** and an interactive, real-time clinical monitoring station.
+An end-to-end, clinically grounded artificial intelligence system that combines early predictive deterioration modeling on MIMIC-IV clinical time-series with a bounded adaptive ventilation controller and an interactive, real-time clinical monitoring station.
 
-> [!IMPORTANT]
-> 📢 **MANDATORY TEAM NOTICE**: Before picking up or working on any daily tasks, all team members (**Manju, Thiyaa, Mithun, Ithyaash**) must read [INSTRUCTIONS.md](file:///c:/backup/college/Projects/AI-Predictive-and-Adaptive-Ventilator-System-MIMIC-IV/INSTRUCTIONS.md) for our 2-month phase roadmap, assigned domains, and strict Git branching rules (no direct pushes to `main`).
+> **Team Notice**: Before picking up or working on any daily tasks, all team members (Manju, Thiyaa, Mithun, Ithyaash) must read [INSTRUCTIONS.md](file:///c:/backup/college/Projects/AI-Predictive-and-Adaptive-Ventilator-System-MIMIC-IV/INSTRUCTIONS.md) for our roadmap, assigned domains, and strict Git branching rules (no direct pushes to `main`).
 
 ---
 
-## 🌟 Key Features:
+## Key Features
 
 1. **Retrospective MIMIC-IV Clinical Pipeline (`src/data/extractor.py`)**
    - Ingests ICU stays, patient demographics, ICD diagnoses/comorbidities, flow-sheet ventilator measurements (`chartevents`), and blood gas laboratory panels (`labevents`).
@@ -48,7 +47,7 @@ An end-to-end, clinically grounded artificial intelligence system that combines 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── mimic-iv-demo-dataset/        # Raw MIMIC-IV Clinical Database Demo v2.2
@@ -86,11 +85,11 @@ An end-to-end, clinically grounded artificial intelligence system that combines 
 
 ---
 
-## 🚀 Quickstart Guide
+## Quickstart Guide
 
 ### 1. Requirements
 - Python 3.10+
-- Installed packages: `pandas`, `numpy`, `scikit-learn`, `xgboost`, `lightgbm`, `fastapi`, `uvicorn`, `jinja2`
+- Installed packages: `pandas`, `numpy`, `scikit-learn`, `xgboost`, `lightgbm`, `fastapi`, `uvicorn`, `jinja2`, `matplotlib`, `httpx`
 
 ### 2. Extract and Preprocess MIMIC-IV Cohort
 ```bash
@@ -118,7 +117,7 @@ Open your browser to: **`http://127.0.0.1:8000`**
 
 ---
 
-## 📊 Predictive Model Benchmarking Suite (Phase 2 - In Development)
+## Predictive Model Benchmarking Suite (Phase 2 - In Development)
 
 The multi-model comparative benchmarking suite (evaluating **Logistic Regression, Random Forest, LightGBM, and XGBoost** using patient-level **GroupKFold (k=5)** cross-validation) is scheduled to be implemented from scratch across **Phase 2**.
 
@@ -130,7 +129,7 @@ will generate the evaluation metrics (AUROC, AUPRC, Sensitivity, Specificity, Br
 
 ---
 
-## 🛡️ Clinical Safety & Governance Principles
+## Clinical Safety and Governance Principles
 
 1. **Strict ARDSNet Envelopes:** No recommendation violates the $4–8\text{ mL/kg PBW}$ tidal volume bound or allows plateau pressure to exceed $30\text{ cmH}_2\text{O}$.
 2. **Anti-Fatigue Specificity:** By achieving $>96.4\%$ specificity, the system suppresses false alarms that plague conventional monitors.
@@ -138,7 +137,7 @@ will generate the evaluation metrics (AUROC, AUPRC, Sensitivity, Specificity, Br
 
 ---
 
-## 👥 Project Team & Contributors
+## Project Team and Contributors
 
 | Name | Focus Area | Core Responsibilities |
 | :--- | :--- | :--- |
