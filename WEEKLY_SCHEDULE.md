@@ -50,16 +50,16 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ### 📅 Week 1: Environment, Ingestion & Baseline Sanity
 #### Slot 1 (Days 1–2)
-- **Manju**: `[Task 1.1]` Create patient demographic summary script (`scripts/eda_demographics.py`) *(Active: GitHub Issue #12 — In Progress)*.
+- **Manju**: `[Task 1.1]` Create patient demographic summary script (`scripts/eda_demographics.py`) *(Completed: GitHub Issue #12 / PR #32)*.
 - **Thiyaa**: `[Task 1.2]` Verify local FastAPI server & static asset loading (`scripts/verify_server.py`) *(Completed: GitHub Issue #13 / PR #24)*.
 - **Mithun**: `[Task 1.3]` Create dataset table inspector & schema script (`scripts/inspect_tables.py`) *(Completed: GitHub Issue #14 / PR #25)*.
 - **Ithyaash**: `[Task 1.4]` Define core model training abstractions and pipeline interfaces in `src/models/trainer.py` *(Completed: GitHub Issue #15 / PR #23)*.
 
 #### Slot 2 (Days 3–4)
-- **Manju**: `[Task 1.5]` Generate clinical vital signs distribution histograms (`scripts/plot_vital_distributions.py`) *(Active: GitHub Issue #26 — Deadline: 25 Nov 11:59 PM IST)*.
-- **Thiyaa**: `[Task 1.6]` Responsive layout audit and UI component review (`docs/ui_layout_audit.md`) *(Active: GitHub Issue #27 — Deadline: 25 Nov 11:59 PM IST)*.
-- **Mithun**: `[Task 1.7]` Implement missing vital signs audit script (`scripts/audit_missing_values.py`) *(Active: GitHub Issue #28 — Deadline: 25 Nov 11:59 PM IST)*.
-- **Ithyaash**: `[Task 1.8]` Audit clinical deterioration threshold labeling logic in `src/data/extractor.py` *(Active: GitHub Issue #29 — Deadline: 25 Nov 11:59 PM IST)*.
+- **Manju**: `[Task 1.5]` Generate clinical vital signs distribution histograms (`scripts/plot_vital_distributions.py`) *(Completed: GitHub Issue #26 / PR #33)*.
+- **Thiyaa**: `[Task 1.6]` Responsive layout audit and UI component review (`docs/ui_layout_audit.md`) *(Completed: GitHub Issue #27 / PR #30)*.
+- **Mithun**: `[Task 1.7]` Implement missing vital signs audit script (`scripts/audit_missing_values.py`) *(Completed: GitHub Issue #28 / PR #31)*.
+- **Ithyaash**: `[Task 1.8]` Audit clinical deterioration threshold labeling logic in `src/data/extractor.py` *(Completed: GitHub Issue #29 / PR #34)*.
 
 #### Slot 3 (Days 5–6)
 - **Manju**: `[Task 1.9]` Clinical comorbidity frequency analysis (`scripts/eda_comorbidities.py`).
