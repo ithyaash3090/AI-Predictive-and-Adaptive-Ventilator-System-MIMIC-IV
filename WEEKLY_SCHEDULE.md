@@ -62,10 +62,10 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 - **Ithyaash**: `[Task 1.8]` Audit clinical deterioration threshold labeling logic in `src/data/extractor.py` *(Completed: GitHub Issue #29 / PR #34)*.
 
 #### Slot 3 (Days 5–6)
-- **Manju**: `[Task 1.9]` Clinical comorbidity frequency analysis (`scripts/eda_comorbidities.py`).
-- **Thiyaa**: `[Task 1.10]` Design clinical telemetry status badge tokens in `src/web/static/styles.css`.
-- **Mithun**: `[Task 1.11]` Build laboratory blood gas panel validator for pH, PaCO2, and PaO2 (`scripts/validate_labs.py`).
-- **Ithyaash**: `[Task 1.12]` Implement patient-level cross-validation splitter blueprint (`scripts/test_splitter.py`).
+- **Manju**: `[Task 1.9]` Clinical comorbidity frequency analysis (`scripts/eda_comorbidities.py`) *(Active: GitHub Issue #35 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Thiyaa**: `[Task 1.10]` Design clinical telemetry status badge tokens in `src/web/static/styles.css` *(Active: GitHub Issue #36 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Mithun**: `[Task 1.11]` Build laboratory blood gas panel validator for pH, PaCO2, and PaO2 (`scripts/validate_labs.py`) *(Active: GitHub Issue #37 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Ithyaash**: `[Task 1.12]` Implement patient-level cross-validation splitter blueprint (`scripts/test_splitter.py`) *(Active: GitHub Issue #38 — Deadline: 26 Nov 11:59 PM IST)*.
 
 ---
 
