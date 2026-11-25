@@ -1,0 +1,23 @@
+name: Guard Main Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify-main-push-authorization:
+    name: Verify Main Push Authorization
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify Actor
+        run: |
+          ACTOR="${{ github.actor }}"
+          echo "Push actor on main: $ACTOR"
+          if [ "$ACTOR" != "ithyaash3090" ]; then
+            echo "::error::Unauthorized push to main branch detected by user: $ACTOR"
+            echo "Only repository lead ithyaash3090 has permission to push or merge to main."
+            exit 1
+          else
+            echo "Authorized: Push executed by repository lead ithyaash3090."
+          fi
