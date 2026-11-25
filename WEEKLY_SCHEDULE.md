@@ -1,7 +1,6 @@
-# 🗓️ Master Weekly Task Schedule (Weeks 0 – 12)
+# Master Weekly Task Schedule (Weeks 0 – 12)
 
-> [!CAUTION]
-> 🔒 **ACCESS RESTRICTED: READ-ONLY FOR TEAMMATES, WRITE-ACCESS LEAD-ONLY**  
+> **ACCESS RESTRICTED: READ-ONLY FOR TEAMMATES, WRITE-ACCESS LEAD-ONLY**  
 > **Teammates (Manju, Thiyaa, Mithun) can freely read this file to view schedules and roadmap, but only `ithyaash3090` has the access to edit or modify `WEEKLY_SCHEDULE.md`.**  
 > Teammates must NOT edit, stage, or modify this file in their branches or Pull Requests. The schedule is managed and updated exclusively by `@ithyaash3090` after evaluating PRs, running CI checks, and verifying merge status. Any Pull Request attempting to modify this file will be automatically rejected.
 
@@ -11,19 +10,18 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-## 🔹 Phase 0: Team Onboarding & Git Workflow Tutorial (Week 0)
+## Phase 0: Team Onboarding & Git Workflow Tutorial (Week 0)
 
 *The objective of Week 0 is for the teammates (Manju, Thiyaa, Mithun) to learn the daily task assignment, branch creation, commit, PR review, and merge conflict resolution with beginner-friendly starter tasks, practicing the rule of zero direct pushes to `main`.*
 
-> 📌 **NOTE**: Week 0 will **officially begin only when the lead announces it**. Any individual warm-up tasks assigned before that are independent practice exercises.
+> **NOTE**: Week 0 will **officially begin only when the lead announces it**. Any individual warm-up tasks assigned before that are independent practice exercises.
 
-> [!IMPORTANT]
-> 🛑 **MANDATORY POLICY FOR WEEK 0 (HANDS-ON MANUAL GIT MASTERY)**:  
+> **MANDATORY POLICY FOR WEEK 0 (HANDS-ON MANUAL GIT MASTERY)**:  
 > - **The Goal**: Build genuine personal confidence and terminal muscle memory with Git: creating a branch (`git checkout -b ...`), committing, pushing to remote (`git push -u origin ...`), opening a PR, understanding merge conflicts, and syncing `main`.  
 > - **AI Usage in Week 0**: You may ask AI questions to learn or clarify git concepts, but **AI MUST NOT write or complete your Week 0 tasks for you**. Every terminal command and script must be executed by you manually.  
 > - *(From Week 1 onwards, using AI assistance across the project is completely welcomed!)*
 
-### 📅 Week 0: Starter Tutorial & Git Practice
+### Week 0: Starter Tutorial & Git Practice
 #### Slot 1 (Days 1–2) — Starter Tutorial Tasks
 - **Manju**: `[Task 0.1]` Starter Task: Repository setup, dependencies test & dataset path verification script (`scripts/verify_data_paths.py`) *(Completed: GitHub Issue #3 / PR #6)*.
 - **Thiyaa**: `[Task 0.2]` Starter Task: Web server local boot & static frontend asset check script (`scripts/verify_web_assets.py`) *(Completed: GitHub Issue #4 / PR #7)*.
@@ -46,9 +44,9 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-## 🔹 Phase 1: Foundation, Data Ingestion & Setup (Weeks 1 – 3)
+## Phase 1: Foundation, Data Ingestion & Setup (Weeks 1 – 3)
 
-### 📅 Week 1: Environment, Ingestion & Baseline Sanity
+### Week 1: Environment, Ingestion & Baseline Sanity
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 1.1]` Create patient demographic summary script (`scripts/eda_demographics.py`) *(Completed: GitHub Issue #12 / PR #32)*.
 - **Thiyaa**: `[Task 1.2]` Verify local FastAPI server & static asset loading (`scripts/verify_server.py`) *(Completed: GitHub Issue #13 / PR #24)*.
@@ -69,7 +67,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 2: Data Cleaning, Missing Audits & Interface Standards
+### Week 2: Data Cleaning, Missing Audits & Interface Standards
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 2.1]` Compute correlation matrix across baseline clinical vitals (`scripts/plot_correlations.py`).
 - **Thiyaa**: `[Task 2.2]` Implement accessible dark-mode color palette tokens in `src/web/static/styles.css`.
@@ -90,7 +88,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 3: Cohort Finalization & Pipeline Hardening
+### Week 3: Cohort Finalization & Pipeline Hardening
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 3.1]` Generate paired scatter plots for PaO2/FiO2 vs SpO2/FiO2 indices (`scripts/plot_oxygenation_ratios.py`).
 - **Thiyaa**: `[Task 3.2]` Setup client-side state container for real-time telemetry updates in `src/web/static/dashboard.js`.
@@ -111,9 +109,9 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-## 🔹 Phase 2: Feature Engineering & Machine Learning (Weeks 4 – 7)
+## Phase 2: Feature Engineering & Machine Learning (Weeks 4 – 7)
 
-### 📅 Week 4: Temporal Feature Engineering
+### Week 4: Temporal Feature Engineering
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 4.1]` Plot trend lines of vital signs for deteriorating vs non-deteriorating patient stays (`scripts/plot_stay_trajectories.py`).
 - **Thiyaa**: `[Task 4.2]` Create telemetry graph placeholder containers using Chart.js in `dashboard.html`.
@@ -134,7 +132,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 5: Patient-Level Validation & Baseline Modeling
+### Week 5: Patient-Level Validation & Baseline Modeling
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 5.1]` Build ROC curve and Precision-Recall curve generator module (`scripts/evaluation_metrics.py`).
 - **Thiyaa**: `[Task 5.2]` Design bedside patient profile header with PBW and admission details in `dashboard.html`.
@@ -155,7 +153,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 6: Gradient Boosting (LightGBM & XGBoost)
+### Week 6: Gradient Boosting (LightGBM & XGBoost)
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 6.1]` Plot comparative ROC curves: Logistic Regression vs Random Forest (`scripts/plot_roc_comparison.py`).
 - **Thiyaa**: `[Task 6.2]` Build clinical drivers breakdown panel in `dashboard.html` for feature contribution display.
@@ -176,7 +174,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 7: Model Benchmarking & Lead-Time Analysis
+### Week 7: Model Benchmarking & Lead-Time Analysis
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 7.1]` Calculate early warning lead time distribution across true positive alerts (`scripts/lead_time_analysis.py`).
 - **Thiyaa**: `[Task 7.2]` Build early warning lead-time badge and countdown clock component in `dashboard.js`.
@@ -197,9 +195,9 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-## 🔹 Phase 3: Adaptive Control & Physiological Simulation (Weeks 8 – 9)
+## Phase 3: Adaptive Control & Physiological Simulation (Weeks 8 – 9)
 
-### 📅 Week 8: ARDSNet Bounded Adaptive Controller
+### Week 8: ARDSNet Bounded Adaptive Controller
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 8.1]` Generate visual ARDSNet PEEP/FiO2 titration grid matrix (`scripts/plot_ardsnet_table.py`).
 - **Thiyaa**: `[Task 8.2]` Build 7-point clinical safety checklist UI card in `dashboard.html`.
@@ -220,7 +218,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 9: Closed-Loop Physiological Lung Simulator
+### Week 9: Closed-Loop Physiological Lung Simulator
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 9.1]` Plot 2-compartment compliance and resistance response curves (`scripts/plot_lung_mechanics.py`).
 - **Thiyaa**: `[Task 9.2]` Build simulation control sandbox card in `dashboard.html` with Play/Pause/Reset buttons.
@@ -241,9 +239,9 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-## 🔹 Phase 4: Full System Integration & Academic Paper (Weeks 10 – 12)
+## Phase 4: Full System Integration & Academic Paper (Weeks 10 – 12)
 
-### 📅 Week 10: FastAPI Backend & Real-Time Telemetry
+### Week 10: FastAPI Backend & Real-Time Telemetry
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 10.1]` Build statistical summary report of API latency and simulation telemetry bounds (`scripts/report_api_benchmarks.py`).
 - **Thiyaa**: `[Task 10.2]` Connect frontend fetch calls to FastAPI REST endpoints in `dashboard.js`.
@@ -264,7 +262,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 11: End-to-End System Validation & Paper Drafting
+### Week 11: End-to-End System Validation & Paper Drafting
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 11.1]` Complete research paper Section 4 (Results & Performance Analysis) in `research_paper.md`.
 - **Thiyaa**: `[Task 11.2]` Create user walkthrough manual with screenshots in `docs/user_manual.md`.
@@ -285,7 +283,7 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 
 ---
 
-### 📅 Week 12: Final Polish, Demo Rehearsal & Project Defense
+### Week 12: Final Polish, Demo Rehearsal & Project Defense
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 12.1]` Prepare final presentation slides for academic defense / project exhibition (Clinical problem & Model evaluation).
 - **Thiyaa**: `[Task 12.2]` Prepare final presentation slides for system interface, clinician experience, and interactive monitoring station.
