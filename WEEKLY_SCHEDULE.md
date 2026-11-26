@@ -47,6 +47,9 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 ## Phase 1: Foundation, Data Ingestion & Setup (Weeks 1 – 3)
 
 ### Week 1: Environment, Ingestion & Baseline Sanity
+
+> **CLINICAL FOCUS STRATEGY**: In accordance with project review, the modeling cohort is focused on the **Respiratory-Oriented Cohort** (Acute Respiratory Failure, ARDS, Severe Pneumonia, COPD Exacerbation) extracted to `outputs/respiratory_cohort.csv` (7,324 hourly rows across 52 respiratory patients). The system executes a Two-Stage Architecture: Stage 1 predicts whether the patient will experience acute respiratory failure/deterioration, and Stage 2 titrates closed-loop adaptive ventilator settings.
+
 #### Slot 1 (Days 1–2)
 - **Manju**: `[Task 1.1]` Create patient demographic summary script (`scripts/eda_demographics.py`) *(Completed: GitHub Issue #12 / PR #32)*.
 - **Thiyaa**: `[Task 1.2]` Verify local FastAPI server & static asset loading (`scripts/verify_server.py`) *(Completed: GitHub Issue #13 / PR #24)*.
@@ -60,10 +63,10 @@ This schedule defines the roadmap for the **AI-Powered Adaptive and Predictive V
 - **Ithyaash**: `[Task 1.8]` Audit clinical deterioration threshold labeling logic in `src/data/extractor.py` *(Completed: GitHub Issue #29 / PR #34)*.
 
 #### Slot 3 (Days 5–6)
-- **Manju**: `[Task 1.9]` Clinical comorbidity frequency analysis (`scripts/eda_comorbidities.py`) *(Active: GitHub Issue #35 — Deadline: 26 Nov 11:59 PM IST)*.
-- **Thiyaa**: `[Task 1.10]` Design clinical telemetry status badge tokens in `src/web/static/styles.css` *(Active: GitHub Issue #36 — Deadline: 26 Nov 11:59 PM IST)*.
-- **Mithun**: `[Task 1.11]` Build laboratory blood gas panel validator for pH, PaCO2, and PaO2 (`scripts/validate_labs.py`) *(Active: GitHub Issue #37 — Deadline: 26 Nov 11:59 PM IST)*.
-- **Ithyaash**: `[Task 1.12]` Implement patient-level cross-validation splitter blueprint (`scripts/test_splitter.py`) *(Active: GitHub Issue #38 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Manju**: `[Task 1.9]` Clinical comorbidity frequency analysis focusing on respiratory failure etiologies (`scripts/eda_comorbidities.py`) *(Active: GitHub Issue #35 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Thiyaa**: `[Task 1.10]` Design clinical telemetry status badge tokens for hypoxemia stages in `src/web/static/styles.css` *(Active: GitHub Issue #36 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Mithun**: `[Task 1.11]` Build laboratory blood gas panel validator for PaO2, PaCO2, and pH (`scripts/validate_labs.py`) *(Active: GitHub Issue #37 — Deadline: 26 Nov 11:59 PM IST)*.
+- **Ithyaash**: `[Task 1.12]` Implement patient-level cross-validation splitter blueprint (`scripts/test_splitter.py`) *(Completed: GitHub Issue #38 / PR #39)*.
 
 ---
 
