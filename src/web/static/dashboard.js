@@ -176,24 +176,24 @@ function updateRiskGauge(risk) {
   circleEl.style.strokeDashoffset = offset;
 
   if (risk < 0.25) {
-    displayEl.style.color = "#10b981";
-    circleEl.style.stroke = "#10b981";
-    badgeEl.className = "badge badge-emerald";
+    displayEl.style.color = "var(--badge-normal-text)";
+    circleEl.style.stroke = "var(--badge-normal-text)";
+    badgeEl.className = "badge badge-normal";
     badgeEl.innerText = "NORMAL";
   } else if (risk < 0.50) {
     displayEl.style.color = "#3b82f6";
     circleEl.style.stroke = "#3b82f6";
-    badgeEl.className = "badge badge-blue";
+    badgeEl.className = "badge badge-supervised";
     badgeEl.innerText = "GUARDED";
   } else if (risk < 0.75) {
-    displayEl.style.color = "#f59e0b";
-    circleEl.style.stroke = "#f59e0b";
-    badgeEl.className = "badge badge-amber";
+    displayEl.style.color = "var(--badge-warning-text)";
+    circleEl.style.stroke = "var(--badge-warning-text)";
+    badgeEl.className = "badge badge-warning";
     badgeEl.innerText = "HIGH RISK";
   } else {
-    displayEl.style.color = "#ef4444";
-    circleEl.style.stroke = "#ef4444";
-    badgeEl.className = "badge badge-crimson";
+    displayEl.style.color = "var(--badge-critical-text)";
+    circleEl.style.stroke = "var(--badge-critical-text)";
+    badgeEl.className = "badge badge-critical";
     badgeEl.innerText = "CRITICAL DETERIORATION";
   }
 }
