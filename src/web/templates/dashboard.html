@@ -138,43 +138,67 @@
           
           <!-- Key Telemetry Tile Grid -->
           <div class="telemetry-grid">
-            <div class="telemetry-tile">
-              <span class="tile-label">Oxygen Sat (SpO2)</span>
+            <div class="telemetry-tile" id="card-spo2">
+              <div class="tile-header">
+                <span class="tile-label">Oxygen Sat (SpO2)</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-spo2">STABLE</span>
+              </div>
               <div class="tile-value" id="val-spo2">96 <span class="tile-unit">%</span></div>
               <span class="tile-target">Target: 92-96%</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">Current FiO2</span>
+            <div class="telemetry-tile" id="card-fio2">
+              <div class="tile-header">
+                <span class="tile-label">Current FiO2</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-fio2">SAFE</span>
+              </div>
               <div class="tile-value" id="val-fio2">0.35 <span class="tile-unit"></span></div>
               <span class="tile-target">Safe: &le; 0.60</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">Set PEEP</span>
+            <div class="telemetry-tile" id="card-peep">
+              <div class="tile-header">
+                <span class="tile-label">Set PEEP</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-peep">BOUNDED</span>
+              </div>
               <div class="tile-value" id="val-peep">5.0 <span class="tile-unit">cmH2O</span></div>
               <span class="tile-target">Bounds: 5-20</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">Driving Pressure (&Delta;P)</span>
+            <div class="telemetry-tile" id="card-dp">
+              <div class="tile-header">
+                <span class="tile-label">Driving Pressure (&Delta;P)</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-dp">SAFE</span>
+              </div>
               <div class="tile-value" id="val-dp" style="color: var(--accent-emerald);">11.0 <span class="tile-unit">cmH2O</span></div>
               <span class="tile-target">Limit: &lt; 14.0</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">Tidal Volume (Vt)</span>
+            <div class="telemetry-tile" id="card-vt">
+              <div class="tile-header">
+                <span class="tile-label">Tidal Volume (Vt)</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-vt">TARGET</span>
+              </div>
               <div class="tile-value" id="val-vt">450 <span class="tile-unit">mL</span></div>
               <span class="tile-target" id="val-vt-kg">6.4 mL/kg PBW</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">Respiratory Rate</span>
+            <div class="telemetry-tile" id="card-rr">
+              <div class="tile-header">
+                <span class="tile-label">Respiratory Rate</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-rr">NORMAL</span>
+              </div>
               <div class="tile-value" id="val-rr">18 <span class="tile-unit">bpm</span></div>
               <span class="tile-target">Target: 12-24</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">ROX Index</span>
+            <div class="telemetry-tile" id="card-rox">
+              <div class="tile-header">
+                <span class="tile-label">ROX Index</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-rox">LOW RISK</span>
+              </div>
               <div class="tile-value" id="val-rox">15.2 <span class="tile-unit"></span></div>
               <span class="tile-target">Safe: &gt; 4.88</span>
             </div>
-            <div class="telemetry-tile">
-              <span class="tile-label">Mean Art. Pressure</span>
+            <div class="telemetry-tile" id="card-map">
+              <div class="tile-header">
+                <span class="tile-label">Mean Art. Pressure</span>
+                <span class="badge badge-normal badge-sm" id="badge-status-map">ADEQUATE</span>
+              </div>
               <div class="tile-value" id="val-map">78 <span class="tile-unit">mmHg</span></div>
               <span class="tile-target">Target: &gt; 65</span>
             </div>

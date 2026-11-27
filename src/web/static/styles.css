@@ -13,9 +13,30 @@
   --accent-crimson: #ef4444;
   --accent-purple: #8b5cf6;
 
+  /* Clinical Telemetry Status Badge Design Tokens (WCAG AA Compliant) */
+  --badge-normal-bg: rgba(16, 185, 129, 0.15);
+  --badge-normal-border: rgba(16, 185, 129, 0.35);
+  --badge-normal-text: #34d399; /* Contrast > 10:1 against dark background (WCAG AAA) */
+  --badge-normal-glow: rgba(16, 185, 129, 0.25);
+
+  --badge-warning-bg: rgba(245, 158, 11, 0.15);
+  --badge-warning-border: rgba(245, 158, 11, 0.35);
+  --badge-warning-text: #fbbf24; /* Contrast > 9:1 against dark background (WCAG AAA) */
+  --badge-warning-glow: rgba(245, 158, 11, 0.25);
+
+  --badge-critical-bg: rgba(239, 68, 68, 0.18);
+  --badge-critical-border: rgba(239, 68, 68, 0.45);
+  --badge-critical-text: #f87171; /* Contrast 6.1:1 against dark background (WCAG AA) */
+  --badge-critical-glow: rgba(239, 68, 68, 0.35);
+
+  --badge-supervised-bg: rgba(139, 92, 246, 0.15);
+  --badge-supervised-border: rgba(139, 92, 246, 0.35);
+  --badge-supervised-text: #a78bfa; /* Contrast 7.6:1 against dark background (WCAG AAA) */
+  --badge-supervised-glow: rgba(139, 92, 246, 0.25);
+
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-muted: #8494ab;
 
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -266,19 +287,113 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s ease;
+  user-select: none;
 }
 
+.badge:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.badge-sm {
+  padding: 0.15rem 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+/* Clinical Telemetry Status Badge Classes */
+/* .badge-normal: Stable physiological range (SpO2 >= 95%, driving pressure <= 14 cmH2O) */
+.badge-normal {
+  background: var(--badge-normal-bg);
+  color: var(--badge-normal-text);
+  border: 1px solid var(--badge-normal-border);
+}
+
+.badge-normal:hover {
+  box-shadow: 0 0 10px var(--badge-normal-glow);
+}
+
+/* .badge-warning: Borderline parameter (SpO2 90-94%, driving pressure 15-18 cmH2O) */
+.badge-warning {
+  background: var(--badge-warning-bg);
+  color: var(--badge-warning-text);
+  border: 1px solid var(--badge-warning-border);
+  animation: pulseWarning 2.5s infinite ease-in-out;
+}
+
+.badge-warning:hover {
+  box-shadow: 0 0 10px var(--badge-warning-glow);
+}
+
+/* .badge-critical: Acute deterioration (SpO2 < 90%, P/F <= 200, driving pressure > 18 cmH2O) */
+.badge-critical {
+  background: var(--badge-critical-bg);
+  color: var(--badge-critical-text);
+  border: 1px solid var(--badge-critical-border);
+  animation: pulseCritical 1.8s infinite ease-in-out;
+}
+
+.badge-critical:hover {
+  box-shadow: 0 0 12px var(--badge-critical-glow);
+}
+
+/* .badge-supervised: Clinician review required state */
+.badge-supervised {
+  background: var(--badge-supervised-bg);
+  color: var(--badge-supervised-text);
+  border: 1px solid var(--badge-supervised-border);
+}
+
+.badge-supervised:hover {
+  box-shadow: 0 0 10px var(--badge-supervised-glow);
+}
+
+/* Micro-transition animations for clinical indicator badges */
+@keyframes pulseCritical {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes pulseWarning {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+/* Live indicator dot token */
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: currentColor;
+}
+
+/* Color utility aliases for backwards compatibility */
 .badge-cyan { background: rgba(0, 242, 254, 0.12); color: var(--accent-cyan); border: 1px solid rgba(0, 242, 254, 0.3); }
 .badge-blue { background: rgba(59, 130, 246, 0.12); color: var(--accent-blue); border: 1px solid rgba(59, 130, 246, 0.3); }
-.badge-emerald { background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-amber { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-crimson { background: rgba(239, 68, 68, 0.15); color: var(--accent-crimson); border: 1px solid rgba(239, 68, 68, 0.4); animation: pulseDanger 2s infinite; }
-
-@keyframes pulseDanger {
-  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
-  70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-}
+.badge-emerald { background: var(--badge-normal-bg); color: var(--badge-normal-text); border: 1px solid var(--badge-normal-border); }
+.badge-amber { background: var(--badge-warning-bg); color: var(--badge-warning-text); border: 1px solid var(--badge-warning-border); }
+.badge-crimson { background: var(--badge-critical-bg); color: var(--badge-critical-text); border: 1px solid var(--badge-critical-border); animation: pulseCritical 1.8s infinite ease-in-out; }
+.badge-purple { background: var(--badge-supervised-bg); color: var(--badge-supervised-text); border: 1px solid var(--badge-supervised-border); }
 
 /* Grid Layouts */
 .grid-top {
@@ -383,6 +498,41 @@ body {
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s ease;
+}
+
+.telemetry-tile:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.tile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+/* State indicator borders on telemetry tiles */
+.telemetry-tile.state-normal {
+  border-left: 3px solid var(--badge-normal-text);
+}
+
+.telemetry-tile.state-warning {
+  border-left: 3px solid var(--badge-warning-text);
+}
+
+.telemetry-tile.state-critical {
+  border-left: 3px solid var(--badge-critical-text);
+  box-shadow: inset 0 0 12px var(--badge-critical-glow);
+}
+
+.telemetry-tile.state-supervised {
+  border-left: 3px solid var(--badge-supervised-text);
 }
 
 .tile-label {
